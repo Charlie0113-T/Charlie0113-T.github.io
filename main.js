@@ -392,14 +392,13 @@ function initRadarChart() {
         pointRadius: 4,
         pointHoverRadius: 6,
       }],
-    {
-      num: '06',
-      name: 'Python/C++ Lab',
-      status: 'ONGOING',
-      summary: 'Low-level systems programming and scripting experiments. Exploring memory, algorithms, and performance-critical code in both Python and C++.',
-      tags: ['Python', 'C++', 'Systems', 'Algorithms'],
-      url: '#',
     },
+    options: {
+      scales: {
+        r: {
+          beginAtZero: true,
+          min: 0,
+          max: 30,
           ticks: {
             stepSize: 5,
             display: false,
