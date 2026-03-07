@@ -24,6 +24,71 @@ function applyLang() {
   document.documentElement.lang = LANG === 'zh' ? 'zh' : 'en';
 }
 
+/* ═══════════════════════════════════════════════
+   THEME — Dark / Light / Auto (system)
+   ═══════════════════════════════════════════════ */
+
+// 'dark' | 'light' | 'auto'
+// 'auto' = follow system prefers-color-scheme (default when no saved pref)
+let THEME = localStorage.getItem('theme') || 'auto';
+
+const _sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+/** Resolve which actual palette to render given current THEME + system */
+function _resolvedTheme() {
+  if (THEME === 'auto') return _sysDark.matches ? 'dark' : 'light';
+  return THEME;
+}
+
+function applyTheme(theme) {
+  THEME = theme;
+  const resolved = _resolvedTheme();
+  const icon     = document.getElementById('theme-icon');
+
+  // Apply palette
+  if (resolved === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+
+  // Update icon
+  if (icon) {
+    icon.className =
+      theme === 'auto'  ? 'fa-solid fa-circle-half-stroke' :
+      theme === 'light' ? 'fa-solid fa-sun' :
+                          'fa-solid fa-moon';
+    // tooltip so user knows the current state
+    const btn = icon.closest('button');
+    if (btn) {
+      btn.title =
+        theme === 'auto'  ? 'Theme: Auto (following system)' :
+        theme === 'light' ? 'Theme: Light' :
+                            'Theme: Dark';
+    }
+  }
+
+  if (theme === 'auto') {
+    localStorage.removeItem('theme'); // no override; follow system
+  } else {
+    localStorage.setItem('theme', theme);
+  }
+}
+
+// Cycle: dark → light → auto → dark …
+function cycleTheme() {
+  const next = THEME === 'dark' ? 'light' : THEME === 'light' ? 'auto' : 'dark';
+  applyTheme(next);
+}
+
+// Re-apply when OS switches color scheme (only effective in 'auto' mode)
+_sysDark.addEventListener('change', () => {
+  if (THEME === 'auto') applyTheme('auto');
+});
+
+// Apply saved/default theme immediately (before paint)
+applyTheme(THEME);
+
 // ── Intersection Observer: fade-in on scroll ──
 const fadeEls = document.querySelectorAll('.fade-in');
 
@@ -288,6 +353,8 @@ function initPanel() {
   };
 
   const closePanel = () => {
+    _removeEssayScrollListeners();
+    closeEssayFullscreen();
     panel.classList.remove('panel-open');
     panel.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
@@ -323,6 +390,12 @@ function initPanel() {
     });
   }
 
+  // ── Theme toggle (cycles: dark → light → auto) ──
+  const themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', cycleTheme);
+  }
+
   // Apply saved language on load
   applyLang();
 }
@@ -349,6 +422,12 @@ function buildEssays() {
   return `<div class="essays-list">` +
     ESSAYS.map((e, i) => {
       const content = t(e.content, e.content_zh || e.content);
+      // Show only the first ~5 lines as a teaser inside the panel
+      const previewLines = content.split('\n').filter(l => l.trim()).slice(0, 5).join('\n');
+      const previewHtml = typeof marked !== 'undefined'
+        ? marked.parse(previewLines)
+        : previewLines.replace(/\n/g, '<br>');
+      const scrollHintText = t('↓ &nbsp; scroll or swipe down to read', '↓ &nbsp; 向下滚动进入阅读模式');
       return `
       <div class="essay-item" data-essay="${i}">
         <div class="essay-header">
@@ -362,18 +441,146 @@ function buildEssays() {
           <span class="essay-toggle">+</span>
         </div>
         <div class="essay-content">
-          <div class="md-body">${typeof marked !== 'undefined' ? marked.parse(content) : content.replace(/\n/g,'<br>')}</div>
+          <div class="essay-preview-wrap">
+            <div class="md-body">${previewHtml}</div>
+          </div>
+          <div class="essay-scroll-hint">
+            <span class="essay-scroll-hint-arrow">↓</span>
+            <span>${t('scroll or swipe down to read full article', '向下滚动进入全屏阅读模式')}</span>
+          </div>
         </div>
       </div>`;
     }).join('') +
   `</div>`;
 }
 
+// ── Fullscreen Essay Reader ─────────────────────────────
+
+let _efrScrollListeners = { wheel: null, touchStart: null, touchMove: null };
+let _efrTouchStartY = 0;
+
+function _removeEssayScrollListeners() {
+  const pb = document.getElementById('panel-body');
+  if (!pb) return;
+  if (_efrScrollListeners.wheel)      { pb.removeEventListener('wheel',      _efrScrollListeners.wheel);      _efrScrollListeners.wheel = null; }
+  if (_efrScrollListeners.touchStart) { pb.removeEventListener('touchstart', _efrScrollListeners.touchStart); _efrScrollListeners.touchStart = null; }
+  if (_efrScrollListeners.touchMove)  { pb.removeEventListener('touchmove',  _efrScrollListeners.touchMove);  _efrScrollListeners.touchMove = null; }
+}
+
+function _ensureEssayFullscreenDOM() {
+  if (document.getElementById('essay-fullscreen-reader')) return;
+  const el = document.createElement('div');
+  el.id        = 'essay-fullscreen-reader';
+  el.className = 'essay-fullscreen';
+  el.setAttribute('aria-hidden', 'true');
+  el.innerHTML = `
+    <div class="efr-bar">
+      <div class="efr-bar-left">
+        <span class="efr-tag">WRITE</span>
+        <span class="efr-title"  id="efr-title"></span>
+        <span class="efr-date"   id="efr-date"></span>
+      </div>
+      <button class="efr-close" id="efr-close">✕ CLOSE</button>
+      <div class="efr-progress" id="efr-progress"></div>
+    </div>
+    <div class="efr-scroll" id="efr-scroll">
+      <div class="md-body" id="efr-body"></div>
+      <div class="efr-end" id="efr-end">— EOF —</div>
+    </div>`;
+  document.body.appendChild(el);
+
+  // progress bar on scroll
+  const scroll   = document.getElementById('efr-scroll');
+  const progress = document.getElementById('efr-progress');
+  scroll.addEventListener('scroll', () => {
+    const max = scroll.scrollHeight - scroll.clientHeight;
+    if (max > 0) progress.style.width = (scroll.scrollTop / max * 100) + '%';
+  }, { passive: true });
+
+  // close button
+  document.getElementById('efr-close').addEventListener('click', closeEssayFullscreen);
+
+  // keyboard Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && el.classList.contains('active')) closeEssayFullscreen();
+  });
+}
+
+function openEssayFullscreen(idx) {
+  _ensureEssayFullscreenDOM();
+  const essay = ESSAYS[idx];
+  if (!essay) return;
+
+  const content = t(essay.content, essay.content_zh || essay.content);
+  const title   = t(essay.title,   essay.title_zh   || essay.title);
+
+  document.getElementById('efr-title').textContent = title;
+  document.getElementById('efr-date').textContent  = [essay.date, essay.readTime].filter(Boolean).join(' · ');
+  document.getElementById('efr-body').innerHTML    =
+    typeof marked !== 'undefined' ? marked.parse(content) : content.replace(/\n/g, '<br>');
+
+  const scroll = document.getElementById('efr-scroll');
+  scroll.scrollTop = 0;
+  document.getElementById('efr-progress').style.width = '0%';
+
+  const reader = document.getElementById('essay-fullscreen-reader');
+  reader.setAttribute('aria-hidden', 'false');
+  requestAnimationFrame(() => reader.classList.add('active'));
+}
+
+function closeEssayFullscreen() {
+  const reader = document.getElementById('essay-fullscreen-reader');
+  if (!reader) return;
+  reader.classList.remove('active');
+  reader.setAttribute('aria-hidden', 'true');
+}
+
+// ── Toggle + scroll/swipe detection ─────────────────────
+
 function bindEssayToggle() {
   document.querySelectorAll('.essay-header').forEach((header) => {
     header.addEventListener('click', () => {
-      const item = header.closest('.essay-item');
-      item.classList.toggle('expanded');
+      const item    = header.closest('.essay-item');
+      const wasOpen = item.classList.contains('expanded');
+
+      // close any open essay and remove old listeners
+      _removeEssayScrollListeners();
+      document.querySelectorAll('.essay-item.expanded').forEach(el => el.classList.remove('expanded'));
+
+      if (!wasOpen) {
+        item.classList.add('expanded');
+        const idx = parseInt(item.dataset.essay, 10);
+
+        // wait for the open animation, then arm scroll/swipe detection
+        setTimeout(() => {
+          const pb = document.getElementById('panel-body');
+          if (!pb) return;
+
+          // mouse wheel — any downward delta triggers fullscreen
+          _efrScrollListeners.wheel = (e) => {
+            if (e.deltaY > 0) {
+              _removeEssayScrollListeners();
+              openEssayFullscreen(idx);
+            }
+          };
+
+          // touch swipe down (finger moves up on screen = content scrolls down)
+          _efrScrollListeners.touchStart = (e) => {
+            _efrTouchStartY = e.touches[0].clientY;
+          };
+          _efrScrollListeners.touchMove = (e) => {
+            const dy = _efrTouchStartY - e.touches[0].clientY;
+            if (dy > 38) {
+              _removeEssayScrollListeners();
+              openEssayFullscreen(idx);
+            }
+          };
+
+          pb.addEventListener('wheel',      _efrScrollListeners.wheel,      { passive: true });
+          pb.addEventListener('touchstart', _efrScrollListeners.touchStart, { passive: true });
+          pb.addEventListener('touchmove',  _efrScrollListeners.touchMove,  { passive: true });
+        }, 350); // let accordion animation finish first
+      }
     });
   });
 }
@@ -434,13 +641,13 @@ function initRadarChart() {
       labels,
       datasets: [{
         data,
-        borderColor: 'rgba(255, 255, 255, 0.75)',
-        backgroundColor: 'rgba(255, 255, 255, 0.06)',
-        borderWidth: 1.5,
-        pointBackgroundColor: 'rgba(255, 255, 255, 0.9)',
+        borderColor: '#00D4FF',
+        backgroundColor: 'rgba(0, 212, 255, 0.12)',
+        borderWidth: 2.5,
+        pointBackgroundColor: '#00D4FF',
         pointBorderColor: 'rgba(255, 255, 255, 0)',
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        pointRadius: 5,
+        pointHoverRadius: 7,
       }],
     },
     options: {
@@ -454,11 +661,11 @@ function initRadarChart() {
             display: false,
           },
           grid: {
-            color: 'rgba(255, 255, 255, 0.08)',
-            lineWidth: 1,
+            color: 'rgba(0, 212, 255, 0.15)',
+            lineWidth: 1.2,
           },
           angleLines: {
-            color: 'rgba(255, 255, 255, 0.08)',
+            color: 'rgba(0, 212, 255, 0.12)',
             lineWidth: 1,
           },
           pointLabels: {
@@ -475,9 +682,9 @@ function initRadarChart() {
         legend: { display: false },
         tooltip: {
           backgroundColor: 'rgba(10, 10, 10, 0.92)',
-          borderColor: 'rgba(255, 255, 255, 0.15)',
-          borderWidth: 1,
-          titleColor: '#ffffff',
+          borderColor: 'rgba(0, 212, 255, 0.4)',
+          borderWidth: 1.5,
+          titleColor: '#00D4FF',
           bodyColor: '#aaaaaa',
           titleFont: { family: 'Courier New', size: 11, weight: 'normal' },
           bodyFont: { family: 'Inter', size: 12 },
