@@ -6,6 +6,24 @@
 
 'use strict';
 
+/* ═══════════════════════════════════════════════
+   i18n — Language state
+   ═══════════════════════════════════════════════ */
+let LANG = localStorage.getItem('lang') || 'en';
+
+/** Return the right-language string */
+const t = (en, zh) => LANG === 'zh' ? zh : en;
+
+/** Apply language to all [data-en] / [data-zh] elements */
+function applyLang() {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = LANG === 'zh' ? el.dataset.zh : el.dataset.en;
+  });
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = LANG === 'zh' ? 'EN' : '中文';
+  document.documentElement.lang = LANG === 'zh' ? 'zh' : 'en';
+}
+
 // ── Intersection Observer: fade-in on scroll ──
 const fadeEls = document.querySelectorAll('.fade-in');
 
@@ -103,50 +121,56 @@ document.querySelectorAll('.module-card').forEach((card) => {
 const PROJECTS = [
   {
     num: '01',
-    name: 'Height App',
-    status: 'LIVE',
+    name: 'Height App',        name_zh: 'Height App',
+    status: 'LIVE',            status_zh: '已上线',
     summary: 'A web tool for height unit conversion and BMI calculations. Built with Flask and served via Docker.',
+    summary_zh: '身高单位换算与 BMI 计算的网页工具，基于 Flask 构建，通过 Docker 部署。',
     tags: ['Python', 'Flask', 'Docker', 'Web'],
     url: '#',
   },
   {
     num: '02',
-    name: 'StoryForge DAO',
-    status: 'BETA',
+    name: 'StoryForge DAO',     name_zh: 'StoryForge DAO',
+    status: 'BETA',             status_zh: '测试版',
     summary: 'A decentralized autonomous organization platform for collaborative storytelling and co-authorship.',
+    summary_zh: '面向协作创作与联合著作的去中心化自治组织平台。',
     tags: ['Blockchain', 'DAO', 'Web3'],
     url: '#',
   },
   {
     num: '03',
-    name: 'EchoForge DAO',
-    status: 'MVP',
+    name: 'EchoForge DAO',      name_zh: 'EchoForge DAO',
+    status: 'MVP',              status_zh: 'MVP',
     summary: 'An AI-powered content echo system built as a DAO. Enables structured knowledge amplification across nodes.',
+    summary_zh: '以 DAO 形式构建的 AI 内容回响系统，实现跨节点的结构化知识放大。',
     tags: ['AI', 'DAO', 'Python', 'Streamlit'],
     url: '#',
   },
   {
     num: '04',
-    name: 'Personal OS',
-    status: 'ACTIVE',
+    name: 'Personal OS',        name_zh: '个人操作系统',
+    status: 'ACTIVE',           status_zh: '运行中',
     summary: 'This website — a structured, minimal personal operating system representing my thinking and output in public.',
+    summary_zh: '本网站——一个结构化、极简的个人操作系统，公开记录我的思考与产出。',
     tags: ['HTML', 'CSS', 'JavaScript'],
     url: '#',
   },
   {
     num: '05',
-    name: 'HP Web Runner',
-    status: 'ARCHIVED',
+    name: 'HP Web Runner',      name_zh: 'HP Web Runner',
+    status: 'ARCHIVED',         status_zh: '已归档',
     summary: 'Web application runner for server-side execution and deployment pipeline testing.',
+    summary_zh: '用于服务端执行与部署流水线测试的网页应用运行器。',
     tags: ['Python', 'Web', 'DevOps'],
     url: '#',
   },
   {
     num: '06',
-    name: 'C++ Systems Lab',
-    status: 'ONGOING',
-    summary: 'Low-level systems programming experiments. Exploring memory, algorithms, and performance-critical code.',
-    tags: ['C++', 'Systems', 'Algorithms'],
+    name: 'Python/C++ Lab',     name_zh: 'Python/C++ 实验室',
+    status: 'ONGOING',          status_zh: '持续进行',
+    summary: 'Low-level systems programming and scripting experiments. Exploring memory, algorithms, and performance-critical code in both Python and C++.',
+    summary_zh: '底层系统编程与脚本实验，在 Python 与 C++ 中探索内存、算法及性能关键代码。',
+    tags: ['Python', 'C++', 'Systems', 'Algorithms'],
     url: '#',
   },
 ];
@@ -154,9 +178,11 @@ const PROJECTS = [
 const ESSAYS = [
   {
     title: 'Personal OS',
+    title_zh: '个人操作系统',
     date: '',
     readTime: '',
-    content: `# Personal OS\n\n**Layer 4**\nDistribution\n传播层\nTwitter / Youtube / GitHub\n\n**Layer 3**\nFrontend\n展示层\nstickmancharles.com\n\n**Layer 2**\nThinking System\n思考系统\nObsidian\n\n**Layer 1**\nReality\n现实输入\nBooks / School / Life / Investing`,
+    content: `# Personal OS\n\n**Layer 4**\nDistribution\nTwitter / Youtube / GitHub\n\n**Layer 3**\nFrontend\nstickmancharles.com\n\n**Layer 2**\nThinking System\nObsidian\n\n**Layer 1**\nReality\nBooks / School / Life / Investing`,
+    content_zh: `# 个人操作系统\n\n**第四层**\n传播层\nTwitter / Youtube / GitHub\n\n**第三层**\n展示层\nstickmancharles.com\n\n**第二层**\n思考系统\nObsidian\n\n**第一层**\n现实输入\n书籍 / 学校 / 生活 / 投资`,
   },
 ];
 
@@ -164,36 +190,36 @@ const MILESTONES = [
   {
     year: '2023',
     items: [
-      { date: '2023', title: 'Invested in NASDAQ 100 Index Fund', desc: 'Made my first investment in the NASDAQ 100, marking the start of my financial journey.', major: true, tag: 'INVEST' },
+      { date: '2023', title: 'Invested in NASDAQ 100 Index Fund', title_zh: '投资纳斯达克100指数基金', desc: 'Made my first investment in the NASDAQ 100, marking the start of my financial journey.', desc_zh: '完成纳斯达克100的首次投资，开启了我的财务旅程。', major: true, tag: 'INVEST' },
     ]
   },
   {
     year: '2024',
     items: [
-      { date: '2024-01-26', title: 'Dogs Travel Startup Event I', desc: 'Organized and led the first Dogs travel entrepreneurship event, exploring new business models with a passionate team.', major: true, tag: 'STARTUP' },
-      { date: '2024-05-01', title: 'Dogs Travel Startup Event II', desc: 'Held the second Dogs travel entrepreneurship event, further validating the concept and expanding the community.', major: true, tag: 'STARTUP' },
-      { date: '2024-09', title: 'First Encounter with AI Art, Music, and Writing', desc: 'Explored generative AI for the first time, creating art, music, and written works with cutting-edge tools.', major: true, tag: 'AI' },
-      { date: '2024-11', title: 'Python NCT Level 1 Excellence', desc: 'Achieved excellent results in the Python NCT Level 1 exam, demonstrating strong programming fundamentals.', major: false, tag: 'PYTHON' },
+      { date: '2024-01-26', title: 'Dogs Travel Startup Event I', title_zh: '狗狗旅行创业活动 I', desc: 'Organized and led the first Dogs travel entrepreneurship event, exploring new business models with a passionate team.', desc_zh: '组织并主导了第一届狗狗旅行创业活动，与热情的团队共同探索新商业模式。', major: true, tag: 'STARTUP' },
+      { date: '2024-05-01', title: 'Dogs Travel Startup Event II', title_zh: '狗狗旅行创业活动 II', desc: 'Held the second Dogs travel entrepreneurship event, further validating the concept and expanding the community.', desc_zh: '举办第二届狗狗旅行创业活动，进一步验证概念并扩大社区规模。', major: true, tag: 'STARTUP' },
+      { date: '2024-09', title: 'First Encounter with AI Art, Music, and Writing', title_zh: '初次接触 AI 艺术、音乐与写作', desc: 'Explored generative AI for the first time, creating art, music, and written works with cutting-edge tools.', desc_zh: '首次探索生成式 AI，用前沿工具创作艺术、音乐与文字作品。', major: true, tag: 'AI' },
+      { date: '2024-11', title: 'Python NCT Level 1 Excellence', title_zh: 'Python NCT 一级优秀', desc: 'Achieved excellent results in the Python NCT Level 1 exam, demonstrating strong programming fundamentals.', desc_zh: '在 Python NCT 一级考试中取得优秀成绩，展现扎实的编程基础。', major: false, tag: 'PYTHON' },
     ]
   },
   {
     year: '2025',
     items: [
-      { date: '2025-03-03', title: 'First Blockchain Experience & Investment', desc: 'Dove into blockchain technology and made my first investment, opening a new chapter in tech and finance.', major: true, tag: 'BLOCKCHAIN' },
-      { date: '2025-06-06', title: 'Invested in TSLA', desc: 'Added Tesla to my investment portfolio, betting on innovation and the future of mobility.', major: false, tag: 'INVEST' },
-      { date: '2025-08-01', title: 'Discovered VS Code', desc: 'Started using Visual Studio Code, which greatly improved my coding efficiency and workflow.', major: false, tag: 'TOOLS' },
-      { date: '2025-09-14', title: 'Cardano Academy Master Level', desc: 'Achieved Master Level at Cardano Academy, deepening my understanding of blockchain and smart contracts.', major: true, tag: 'CARDANO' },
-      { date: '2025-12-21', title: 'Launched My First C++ Website', desc: 'Deployed my first website built with C++, marking a milestone in my systems programming journey.', major: true, tag: 'C++' },
-      { date: '2025-12-21', title: 'Completed StoryForge DAO MVP', desc: 'Finished and launched the MVP for my blockchain startup project, StoryForge DAO.', major: true, tag: 'DAO' },
+      { date: '2025-03-03', title: 'First Blockchain Experience & Investment', title_zh: '首次区块链体验与投资', desc: 'Dove into blockchain technology and made my first investment, opening a new chapter in tech and finance.', desc_zh: '深入区块链技术并完成首次投资，开启科技与金融融合的新篇章。', major: true, tag: 'BLOCKCHAIN' },
+      { date: '2025-06-06', title: 'Invested in TSLA', title_zh: '投资特斯拉', desc: 'Added Tesla to my investment portfolio, betting on innovation and the future of mobility.', desc_zh: '将特斯拉纳入投资组合，押注创新与出行的未来。', major: false, tag: 'INVEST' },
+      { date: '2025-08-01', title: 'Discovered VS Code', title_zh: '发现 VS Code', desc: 'Started using Visual Studio Code, which greatly improved my coding efficiency and workflow.', desc_zh: '开始使用 Visual Studio Code，大幅提升了编码效率与工作流程。', major: false, tag: 'TOOLS' },
+      { date: '2025-09-14', title: 'Cardano Academy Master Level', title_zh: 'Cardano 学院大师级', desc: 'Achieved Master Level at Cardano Academy, deepening my understanding of blockchain and smart contracts.', desc_zh: '在 Cardano 学院取得大师级认证，深化了对区块链与智能合约的理解。', major: true, tag: 'CARDANO' },
+      { date: '2025-12-21', title: 'Launched My First C++ Website', title_zh: '发布首个 C++ 网站', desc: 'Deployed my first website built with C++, marking a milestone in my systems programming journey.', desc_zh: '部署了第一个用 C++ 构建的网站，标志着系统编程旅程的重要里程碑。', major: true, tag: 'C++' },
+      { date: '2025-12-21', title: 'Completed StoryForge DAO MVP', title_zh: '完成 StoryForge DAO MVP', desc: 'Finished and launched the MVP for my blockchain startup project, StoryForge DAO.', desc_zh: '完成并发布区块链创业项目 StoryForge DAO 的最小可行产品。', major: true, tag: 'DAO' },
     ]
   },
   {
     year: '2026',
     items: [
-      { date: '2026-02-28', title: 'Launched stickmancharles.me', desc: 'Released my personal website, stickmancharles.me, to share my work and ideas with the world.', major: true, tag: 'WEB' },
-      { date: '2026-03-04', title: 'First Cardano Aiken LLM', desc: 'Deployed my first LLM using Cardano Aiken, pushing the boundaries of blockchain AI integration.', major: true, tag: 'AI' },
-      { date: '2026-03-04', title: 'EchoForgeDAO MVP Complete', desc: 'Completed the MVP for my blockchain project EchoForgeDAO, advancing decentralized content creation.', major: true, tag: 'DAO' },
-      { date: '2026-03-06', title: 'Wrote 5,234,000 Words of Literature', desc: 'Achieved a personal record by writing over 5.23 million words, demonstrating dedication to literary creation.', major: true, tag: 'LITERATURE' },
+      { date: '2026-02-28', title: 'Launched stickmancharles.me', title_zh: '发布 stickmancharles.me', desc: 'Released my personal website, stickmancharles.me, to share my work and ideas with the world.', desc_zh: '发布个人网站 stickmancharles.me，向世界分享我的作品与想法。', major: true, tag: 'WEB' },
+      { date: '2026-03-04', title: 'First Cardano Aiken LLM', title_zh: '首个 Cardano Aiken 大语言模型', desc: 'Deployed my first LLM using Cardano Aiken, pushing the boundaries of blockchain AI integration.', desc_zh: '使用 Cardano Aiken 部署首个大语言模型，突破区块链 AI 融合的边界。', major: true, tag: 'AI' },
+      { date: '2026-03-04', title: 'EchoForgeDAO MVP Complete', title_zh: 'EchoForgeDAO MVP 完成', desc: 'Completed the MVP for my blockchain project EchoForgeDAO, advancing decentralized content creation.', desc_zh: '完成区块链项目 EchoForgeDAO 的 MVP，推动去中心化内容创作向前迈进。', major: true, tag: 'DAO' },
+      { date: '2026-03-06', title: 'Wrote 5,234,000 Words of Literature', title_zh: '累计写作 523 万字文学作品', desc: 'Achieved a personal record by writing over 5.23 million words, demonstrating dedication to literary creation.', desc_zh: '创下个人记录，累计写作超过 523 万字，展现对文学创作的坚定投入。', major: true, tag: 'LITERATURE' },
     ]
   },
 ];
@@ -214,10 +240,10 @@ const REVIEW_DATA = {
 // ── Meta map ───────────────────────────────────
 
 const MODULE_META = {
-  projects:  { index: '01', tag: 'BUILD',      title: 'Projects' },
-  essays:    { index: '02', tag: 'WRITE',      title: 'Essays' },
-  milestone: { index: '03', tag: 'MILESTONE',  title: 'Milestone' },
-  review:    { index: '04', tag: 'REVIEW',     title: 'Monthly System Review' },
+  projects:  { index: '01', tag: 'BUILD',     tag_zh: '构建',  title: 'Projects',             title_zh: '项目' },
+  essays:    { index: '02', tag: 'WRITE',     tag_zh: '写作',  title: 'Essays',               title_zh: '文章' },
+  milestone: { index: '03', tag: 'MILESTONE', tag_zh: '里程碑', title: 'Milestone',             title_zh: '里程碑' },
+  review:    { index: '04', tag: 'REVIEW',    tag_zh: '复盘',  title: 'Monthly System Review', title_zh: '月度系统复盘' },
 };
 
 // ── Panel DOM refs ─────────────────────────────
@@ -234,8 +260,8 @@ function initPanel() {
     if (!meta) return;
 
     document.getElementById('panel-index').textContent     = meta.index;
-    document.getElementById('panel-tag-label').textContent = meta.tag;
-    document.getElementById('panel-title').textContent     = meta.title;
+    document.getElementById('panel-tag-label').textContent = t(meta.tag, meta.tag_zh);
+    document.getElementById('panel-title').textContent     = t(meta.title, meta.title_zh);
 
     const body = document.getElementById('panel-body');
     body.innerHTML = '';
@@ -278,6 +304,19 @@ function initPanel() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closePanel();
   });
+
+  // ── Language toggle ──
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      LANG = LANG === 'en' ? 'zh' : 'en';
+      localStorage.setItem('lang', LANG);
+      applyLang();
+    });
+  }
+
+  // Apply saved language on load
+  applyLang();
 }
 
 // ── Content builders ──────────────────────────
@@ -288,23 +327,25 @@ function buildProjects() {
       <div class="project-cell">
         <div class="project-cell-header">
           <span class="project-num">${p.num}</span>
-          <span class="project-status">${p.status}</span>
+          <span class="project-status">${t(p.status, p.status_zh)}</span>
         </div>
-        <div class="project-name">${p.name}</div>
-        <p class="project-summary">${p.summary}</p>
-        <div class="project-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>
-        <a href="${p.url}" class="project-url">View Project →</a>
+        <div class="project-name">${t(p.name, p.name_zh)}</div>
+        <p class="project-summary">${t(p.summary, p.summary_zh)}</p>
+        <div class="project-tags">${p.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+        <a href="${p.url}" class="project-url">${t('View Project →', '查看项目 →')}</a>
       </div>`).join('') +
   `</div>`;
 }
 
 function buildEssays() {
   return `<div class="essays-list">` +
-    ESSAYS.map((e, i) => `
+    ESSAYS.map((e, i) => {
+      const content = t(e.content, e.content_zh || e.content);
+      return `
       <div class="essay-item" data-essay="${i}">
         <div class="essay-header">
           <div class="essay-header-left">
-            <div class="essay-title">${e.title}</div>
+            <div class="essay-title">${t(e.title, e.title_zh || e.title)}</div>
             <div class="essay-meta">
               <span>${e.date}</span>
               <span>${e.readTime}</span>
@@ -313,9 +354,10 @@ function buildEssays() {
           <span class="essay-toggle">+</span>
         </div>
         <div class="essay-content">
-          <div class="md-body">${typeof marked !== 'undefined' ? marked.parse(e.content) : e.content.replace(/\n/g,'<br>')}</div>
+          <div class="md-body">${typeof marked !== 'undefined' ? marked.parse(content) : content.replace(/\n/g,'<br>')}</div>
         </div>
-      </div>`).join('') +
+      </div>`;
+    }).join('') +
   `</div>`;
 }
 
@@ -337,8 +379,8 @@ function buildMilestone() {
         <div class="timeline-item${item.major ? ' major' : ''}">
           <div class="timeline-dot"></div>
           <div class="timeline-date">${item.date}</div>
-          <div class="timeline-item-title">${item.title}</div>
-          <p class="timeline-item-desc">${item.desc}</p>
+          <div class="timeline-item-title">${t(item.title, item.title_zh || item.title)}</div>
+          <p class="timeline-item-desc">${t(item.desc, item.desc_zh || item.desc)}</p>
           <span class="timeline-item-tag">${item.tag}</span>
         </div>`;
     });
@@ -365,7 +407,7 @@ function buildReview() {
         <canvas id="radar-chart"></canvas>
       </div>
       <div class="review-meta">
-        <div class="review-period">// ${REVIEW_DATA.period} — System Review</div>
+        <div class="review-period">// ${REVIEW_DATA.period} — ${t('System Review', '系统复盘')}</div>
         <div class="review-dim-list">${dimRows}</div>
       </div>
     </div>`;
