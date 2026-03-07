@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
@@ -61,7 +62,7 @@
 
     <div class="modules-grid">
 
-      <div class="module-card fade-in delay-1" data-index="01">
+      <div class="module-card fade-in delay-1" data-index="01" data-module="projects">
         <div class="card-header">
           <span class="card-index">01</span>
           <span class="card-tag">BUILD</span>
@@ -73,11 +74,11 @@
         </p>
         <div class="card-footer">
           <span class="card-status">ACTIVE</span>
-          <a href="#" class="card-link">View →</a>
+          <a href="#" class="card-link" data-module="projects">View →</a>
         </div>
       </div>
 
-      <div class="module-card fade-in delay-2" data-index="02">
+      <div class="module-card fade-in delay-2" data-index="02" data-module="essays">
         <div class="card-header">
           <span class="card-index">02</span>
           <span class="card-tag">WRITE</span>
@@ -89,27 +90,26 @@
         </p>
         <div class="card-footer">
           <span class="card-status">ACTIVE</span>
-          <a href="#" class="card-link">Read →</a>
+          <a href="#" class="card-link" data-module="essays">Read →</a>
         </div>
       </div>
 
-      <div class="module-card fade-in delay-3" data-index="03">
+      <div class="module-card fade-in delay-3" data-index="03" data-module="milestone">
         <div class="card-header">
           <span class="card-index">03</span>
-          <span class="card-tag">TEST</span>
+          <span class="card-tag">MILESTONE</span>
         </div>
-        <h3 class="card-title">Experiments</h3>
+        <h3 class="card-title">Milestone</h3>
         <p class="card-desc">
-          Controlled trials. Ideas tested against reality — 
-          hypothesis, execution, result, revision.
+          Key achievements and significant progress points along the journey. Each milestone marks a step forward, reflecting growth, learning, and the realization of important goals.
         </p>
         <div class="card-footer">
           <span class="card-status">RUNNING</span>
-          <a href="#" class="card-link">Explore →</a>
+          <a href="#" class="card-link" data-module="milestone">Explore →</a>
         </div>
       </div>
 
-      <div class="module-card fade-in delay-1" data-index="04">
+      <div class="module-card fade-in delay-1" data-index="04" data-module="review">
         <div class="card-header">
           <span class="card-index">04</span>
           <span class="card-tag">REVIEW</span>
@@ -121,7 +121,7 @@
         </p>
         <div class="card-footer">
           <span class="card-status">FEB 2026</span>
-          <a href="#" class="card-link">Open →</a>
+          <a href="#" class="card-link" data-module="review">Open →</a>
         </div>
       </div>
 
@@ -199,13 +199,13 @@
       <div class="signal-divider"></div>
       <div class="signal-row">
         <span class="signal-label">STACK</span>
-        <span class="signal-value">Python · Web · Systems thinking</span>
+        <span class="signal-value">C++ · AI · Blockchain · Systems thinking</span>
       </div>
       <div class="signal-divider"></div>
       <div class="signal-row" id="contact">
         <span class="signal-label">CONTACT</span>
         <span class="signal-value">
-          <a href="mailto:charles@example.com" class="signal-link">Open channel →</a>
+          <a href="mailto:charlesisworkinghard@gmail.com" class="signal-link">Open channel →</a>
         </span>
       </div>
     </div>
@@ -216,9 +216,37 @@
     <div class="footer-inner">
       <span class="footer-copy">© 2026 Stickman Charles</span>
       <span class="footer-tagline">Simple is everything, just like stickman.</span>
+      <div class="footer-social">
+        <a href="https://x.com/StickmanCharlz" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/in/charles-tao" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://discord.com/users/stickmancharlz" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://youtube.com/@StickmanCharles" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://stickmancharles.substack.com" target="_blank" aria-label="Substack"><i class="fa-solid fa-square-rss"></i></a>
+        <a href="https://medium.com/@Stickman%20Charles" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+      </div>
     </div>
   </footer>
 
+  <!-- ─── MODULE PANEL ─── -->
+  <div class="module-panel" id="module-panel" aria-hidden="true">
+    <div class="panel-backdrop" id="panel-backdrop"></div>
+    <div class="panel-container">
+      <div class="panel-topbar">
+        <div class="panel-topbar-left">
+          <span class="panel-index" id="panel-index">01</span>
+          <span class="panel-tag-label" id="panel-tag-label">BUILD</span>
+          <span class="panel-title" id="panel-title">Projects</span>
+        </div>
+        <button class="panel-close" id="panel-close" aria-label="Close">✕ CLOSE</button>
+      </div>
+      <div class="panel-body" id="panel-body">
+        <!-- Dynamic content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
