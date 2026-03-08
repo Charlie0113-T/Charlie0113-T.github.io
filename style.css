@@ -77,6 +77,21 @@
   --social-icon:         #000000;
 }
 
+[data-theme="light"] .efr-scroll .md-body {
+  color: #000000;
+}
+[data-theme="light"] .efr-scroll .md-body blockquote {
+  border-left-color: rgba(0, 0, 0, 0.2);
+  color: #444444;
+}
+[data-theme="light"] .efr-scroll .md-body a {
+  color: rgba(0, 0, 0, 0.75);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+[data-theme="light"] .efr-scroll .md-body a:hover {
+  color: #000000;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
