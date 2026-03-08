@@ -192,6 +192,8 @@ const PROJECTS = [
     summary_zh: '身高单位换算与 BMI 计算的网页工具，基于 Flask 构建，通过 Docker 部署。',
     tags: ['Python', 'Flask', 'Docker', 'Web'],
     url: '#',
+    detail: `# Height App\n\n**Status:** LIVE\n**Stack:** Python · Flask · Docker · Web\n\n## Overview\nHeight App is a lightweight web tool for height unit conversion between cm, feet/inches, and meters. It also provides BMI calculations with visual indicators, helping users understand their health metrics in a clear, structured format.\n\n## Features\n- Height unit conversion: cm ↔ ft/in ↔ m\n- BMI calculation and classification (Underweight / Normal / Overweight / Obese)\n- Clean, minimal web interface\n- Dockerized deployment for portability\n\n## Tech Stack\nBuilt with Python and Flask for the backend, with a minimal HTML/CSS frontend. Deployed via Docker on a cloud platform.\n\n## Key Learnings\nThis was my first deployed web application — a practical exercise in building, containerizing, and deploying a full-stack Python web service.`,
+    detail_zh: `# Height App\n\n**状态：** 已上线\n**技术栈：** Python · Flask · Docker · Web\n\n## 概览\nHeight App 是一款轻量级网页工具，支持 cm、英尺/英寸、米之间的身高单位换算，并提供 BMI 计算和可视化分类，帮助用户清晰了解自身健康指标。\n\n## 功能\n- 身高单位换算：cm ↔ 英尺/英寸 ↔ 米\n- BMI 计算与分类（偏轻 / 正常 / 超重 / 肥胖）\n- 简洁极简的网页界面\n- Docker 容器化部署，便于迁移\n\n## 技术栈\n后端采用 Python + Flask 构建，前端为极简 HTML/CSS 页面，通过 Docker 部署至云平台。\n\n## 核心收获\n这是我第一个正式部署的网页应用——一次从构建到容器化、再到完整部署全链路 Python Web 服务的实践。`,
   },
   {
     num: '02',
@@ -201,6 +203,8 @@ const PROJECTS = [
     summary_zh: '面向协作创作与联合著作的去中心化自治组织平台。',
     tags: ['Blockchain', 'DAO', 'Web3'],
     url: '#',
+    detail: `# StoryForge DAO\n\n**Status:** BETA\n**Stack:** Blockchain · DAO · Web3\n\n## Overview\nStoryForge DAO is a decentralized autonomous organization built for collaborative storytelling. Writers, editors, and readers co-govern the platform through token-based voting, deciding which stories get published, funded, and distributed.\n\n## Vision\nThe traditional publishing model is centralized and gatekept. StoryForge DAO flips this model by giving creative power back to the community — any contributor can propose, vote on, and earn from the ecosystem.\n\n## Features\n- Decentralized governance via smart contracts\n- Collaborative co-authorship framework\n- Token-based voting and revenue sharing\n- On-chain publishing records\n\n## Status\nCurrently in BETA phase, refining governance mechanics and smart contract architecture.`,
+    detail_zh: `# StoryForge DAO\n\n**状态：** 测试版\n**技术栈：** 区块链 · DAO · Web3\n\n## 概览\nStoryForge DAO 是一个面向协作创作的去中心化自治组织。作者、编辑与读者通过代币投票共同治理平台，决定哪些故事得以发布、获得资助并广泛传播。\n\n## 愿景\n传统出版模式高度中心化且存在门槛。StoryForge DAO 将创作权归还给社区——任何贡献者都可以发起提案、参与投票并从生态中获益。\n\n## 功能\n- 基于智能合约的去中心化治理\n- 协作共著框架\n- 代币投票与收益分配机制\n- 链上出版记录\n\n## 当前状态\n目前处于 BETA 阶段，正在完善治理机制与智能合约架构。`,
   },
   {
     num: '03',
@@ -209,7 +213,9 @@ const PROJECTS = [
     summary: 'An AI-powered content echo system built as a DAO. Enables structured knowledge amplification across nodes.',
     summary_zh: '以 DAO 形式构建的 AI 内容回响系统，实现跨节点的结构化知识放大。',
     tags: ['AI', 'DAO', 'Python', 'Streamlit'],
-    url: '#',
+    url: 'https://discord.gg/8tjzmjQmpW',
+    detail: `# EchoForge DAO\n\n**Status:** MVP\n**Stack:** AI · DAO · Python · Streamlit\n\n## Overview\nEchoForge DAO is an AI-powered content echo system structured as a DAO. It enables creators to amplify their knowledge and content across distributed nodes through AI-assisted generation, curation, and redistribution.\n\n## How It Works\n1. **Input** — A creator submits a piece of content or idea\n2. **Amplify** — AI processes and expands the idea into structured formats (articles, threads, summaries)\n3. **Echo** — The DAO distributes the amplified content across nodes and channels\n4. **Govern** — Token holders vote on content quality, distribution priorities, and system upgrades\n\n## Join the Community\nThe EchoForge DAO community lives on Discord — join us to participate, contribute, and shape the future of decentralized content creation.\n\n[→ Join EchoForge DAO on Discord](https://discord.gg/8tjzmjQmpW)`,
+    detail_zh: `# EchoForge DAO\n\n**状态：** MVP\n**技术栈：** AI · DAO · Python · Streamlit\n\n## 概览\nEchoForge DAO 是以 DAO 形式构建的 AI 内容回响系统。它帮助创作者通过 AI 辅助生成、策划与再分发，将知识和内容跨节点放大传播。\n\n## 运作方式\n1. **输入** — 创作者提交内容或想法\n2. **放大** — AI 将想法扩展为结构化格式（文章、推文、摘要）\n3. **回响** — DAO 将放大后的内容分发至各节点与渠道\n4. **治理** — 代币持有者对内容质量、分发优先级和系统升级进行投票\n\n## 加入社区\nEchoForge DAO 的社区在 Discord——欢迎加入，参与共建去中心化内容创作的未来。\n\n[→ 加入 EchoForge DAO Discord](https://discord.gg/8tjzmjQmpW)`,
   },
   {
     num: '04',
@@ -219,6 +225,8 @@ const PROJECTS = [
     summary_zh: '本网站——一个结构化、极简的个人操作系统，公开记录我的思考与产出。',
     tags: ['HTML', 'CSS', 'JavaScript'],
     url: '#',
+    detail: `# Personal OS\n\n**Status:** ACTIVE\n**Stack:** HTML · CSS · JavaScript\n\n## Overview\nThis website is my personal operating system — a structured, minimal digital space where I document my thinking, projects, milestones, and operating principles in public.\n\n## Architecture\n**Layer 4** — Distribution: Twitter / YouTube / GitHub\n\n**Layer 3** — Frontend: stickmancharles.com\n\n**Layer 2** — Thinking System: Obsidian\n\n**Layer 1** — Reality: Books / School / Life / Investing\n\n## Design Philosophy\nNo frameworks. No unnecessary dependencies. Pure HTML, CSS, and JavaScript — because simplicity is a feature, not a limitation. The site reflects the same principles I apply to systems thinking: clarity, structure, and iteration.\n\n## Features\n- Dark / Light / Auto theme system\n- Full bilingual support (EN / ZH)\n- Module panel system with Projects, Essays, Milestones, and Monthly Review\n- Fullscreen essay reader with reading progress bar\n- Radar chart for monthly system review`,
+    detail_zh: `# 个人操作系统\n\n**状态：** 运行中\n**技术栈：** HTML · CSS · JavaScript\n\n## 概览\n本网站是我的个人操作系统——一个结构化、极简的数字空间，用于公开记录我的思考、项目、里程碑与运营原则。\n\n## 系统架构\n**第四层** — 传播层：Twitter / YouTube / GitHub\n\n**第三层** — 展示层：stickmancharles.com\n\n**第二层** — 思考系统：Obsidian\n\n**第一层** — 现实输入：书籍 / 学校 / 生活 / 投资\n\n## 设计哲学\n无框架，无冗余依赖。纯 HTML、CSS 与 JavaScript——因为简洁本身就是一种功能，而非局限。网站所体现的，正是我应用于系统思考的核心原则：清晰、结构与迭代。\n\n## 功能\n- 深色 / 浅色 / 跟随系统的三态主题\n- 中英双语完整支持\n- 模块面板系统（项目 / 文章 / 里程碑 / 月度复盘）\n- 带阅读进度条的全屏文章阅读器\n- 月度系统复盘雷达图`,
   },
   {
     num: '05',
@@ -227,7 +235,9 @@ const PROJECTS = [
     summary: 'Web application runner for server-side execution and deployment pipeline testing.',
     summary_zh: '用于服务端执行与部署流水线测试的网页应用运行器。',
     tags: ['Python', 'Web', 'DevOps'],
-    url: '#',
+    url: 'https://height-app-by-charles-tao.onrender.com',
+    detail: `# HP Web Runner\n\n**Status:** ARCHIVED\n**Stack:** Python · Web · DevOps\n\n## Overview\nHP Web Runner is a web application runner built for server-side execution and deployment pipeline testing. It wraps backend Python scripts in a clean web interface, making it easy to test and demo server-side logic without any local setup required.\n\n## Use Case\nOriginally developed as an accessible front-end interface for the Height App backend — allowing users to interact with BMI and height conversion tools through a hosted, publicly accessible web interface.\n\n## Live Demo\nThe application is deployed and accessible online:\n\n[→ Visit the live app](https://height-app-by-charles-tao.onrender.com)\n\n## Tech Stack\n- Python backend with web framework integration\n- Docker containerization for consistent environment\n- Deployed on Render.com`,
+    detail_zh: `# HP Web Runner\n\n**状态：** 已归档\n**技术栈：** Python · Web · DevOps\n\n## 概览\nHP Web Runner 是一款网页应用运行器，专为服务端执行与部署流水线测试而构建。它将后端 Python 脚本封装在简洁的网页界面中，无需任何本地配置即可测试和演示服务端逻辑。\n\n## 使用场景\n最初作为 Height App 后端的可访问前端界面而开发——允许用户通过公开托管的网页端与 BMI 和身高换算工具进行交互。\n\n## 在线体验\n应用已部署，可在线访问：\n\n[→ 访问在线应用](https://height-app-by-charles-tao.onrender.com)\n\n## 技术栈\n- Python 后端集成网页框架\n- Docker 容器化，确保环境一致性\n- 部署于 Render.com`,
   },
   {
     num: '06',
@@ -237,6 +247,8 @@ const PROJECTS = [
     summary_zh: '底层系统编程与脚本实验，在 Python 与 C++ 中探索内存、算法及性能关键代码。',
     tags: ['Python', 'C++', 'Systems', 'Algorithms'],
     url: '#',
+    detail: `# Python/C++ Lab\n\n**Status:** ONGOING\n**Stack:** Python · C++ · Systems · Algorithms\n\n## Overview\nThe Python/C++ Lab is my personal sandbox for low-level systems programming and algorithmic experiments. It's where I explore memory management, data structures, performance-critical code, and the interplay between high-level scripting and compiled systems languages.\n\n## Areas of Exploration\n- **Memory Management** — Manual allocation, pointers, stack vs. heap in C++\n- **Algorithms** — Sorting, searching, graph traversal, dynamic programming\n- **Performance** — Benchmarking Python vs. C++ on compute-heavy tasks\n- **Systems** — File I/O, process management, basic OS interactions\n- **Python NCT** — Achieved Level 1 Excellence in formal Python certification\n\n## Philosophy\nUnderstanding low-level fundamentals makes you a better programmer at every level of abstraction. Before frameworks, there is logic. Before logic, there is memory.`,
+    detail_zh: `# Python/C++ 实验室\n\n**状态：** 持续进行\n**技术栈：** Python · C++ · Systems · Algorithms\n\n## 概览\nPython/C++ 实验室是我进行底层系统编程与算法实验的个人沙箱。在这里，我探索内存管理、数据结构、性能关键代码，以及高级脚本语言与编译型系统语言之间的交互。\n\n## 探索方向\n- **内存管理** — C++ 中的手动分配、指针、栈与堆\n- **算法** — 排序、搜索、图遍历、动态规划\n- **性能** — Python 与 C++ 在计算密集型任务上的基准对比\n- **系统** — 文件 I/O、进程管理、基础操作系统交互\n- **Python NCT** — 正式 Python 认证一级优秀\n\n## 理念\n理解底层基础，能让你在每个抽象层次上都成为更优秀的程序员。在框架之前，是逻辑；在逻辑之前，是内存。`,
   },
 ];
 
@@ -342,7 +354,7 @@ function initPanel() {
     // destroy previous chart
     if (radarChart) { radarChart.destroy(); radarChart = null; }
 
-    if (moduleKey === 'projects')  body.innerHTML = buildProjects();
+    if (moduleKey === 'projects')  { body.innerHTML = buildProjects(); bindProjectDetailBtns(); }
     if (moduleKey === 'essays')    { body.innerHTML = buildEssays(); bindEssayToggle(); }
     if (moduleKey === 'milestone') body.innerHTML = buildMilestone();
     if (moduleKey === 'review')    { body.innerHTML = buildReview(); initRadarChart(); }
@@ -355,6 +367,7 @@ function initPanel() {
   const closePanel = () => {
     _removeEssayScrollListeners();
     closeEssayFullscreen();
+    closeProjectDetail();
     panel.classList.remove('panel-open');
     panel.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
@@ -404,7 +417,7 @@ function initPanel() {
 
 function buildProjects() {
   return `<div class="projects-grid">` +
-    PROJECTS.map(p => `
+    PROJECTS.map((p, i) => `
       <div class="project-cell">
         <div class="project-cell-header">
           <span class="project-num">${p.num}</span>
@@ -413,9 +426,83 @@ function buildProjects() {
         <div class="project-name">${t(p.name, p.name_zh)}</div>
         <p class="project-summary">${t(p.summary, p.summary_zh)}</p>
         <div class="project-tags">${p.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
-        <a href="${p.url}" class="project-url">${t('View Project →', '查看项目 →')}</a>
+        <div class="project-actions">
+          <a class="project-url project-detail-btn" data-idx="${i}">${t('Read More →', '查看详情 →')}</a>
+          ${p.url !== '#' ? `<a href="${p.url}" target="_blank" class="project-url project-visit-btn">${t('Visit →', '访问 →')}</a>` : ''}
+        </div>
       </div>`).join('') +
   `</div>`;
+}
+
+function bindProjectDetailBtns() {
+  document.querySelectorAll('.project-detail-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openProjectDetail(parseInt(btn.dataset.idx, 10));
+    });
+  });
+}
+
+function _ensureProjectDetailDOM() {
+  if (document.getElementById('project-detail-reader')) return;
+  const el = document.createElement('div');
+  el.id        = 'project-detail-reader';
+  el.className = 'essay-fullscreen';
+  el.setAttribute('aria-hidden', 'true');
+  el.innerHTML = `
+    <div class="efr-bar">
+      <div class="efr-bar-left">
+        <span class="efr-tag">BUILD</span>
+        <span class="efr-title" id="pdr-title"></span>
+      </div>
+      <button class="efr-close" id="pdr-close">✕ CLOSE</button>
+      <div class="efr-progress" id="pdr-progress"></div>
+    </div>
+    <div class="efr-scroll" id="pdr-scroll">
+      <div class="md-body" id="pdr-body"></div>
+      <div class="efr-end">— EOF —</div>
+    </div>`;
+  document.body.appendChild(el);
+
+  const scroll   = document.getElementById('pdr-scroll');
+  const progress = document.getElementById('pdr-progress');
+  scroll.addEventListener('scroll', () => {
+    const max = scroll.scrollHeight - scroll.clientHeight;
+    if (max > 0) progress.style.width = (scroll.scrollTop / max * 100) + '%';
+  }, { passive: true });
+
+  document.getElementById('pdr-close').addEventListener('click', closeProjectDetail);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && el.classList.contains('active')) closeProjectDetail();
+  });
+}
+
+function openProjectDetail(idx) {
+  _ensureProjectDetailDOM();
+  const p = PROJECTS[idx];
+  if (!p) return;
+
+  const content = t(p.detail, p.detail_zh || p.detail);
+  const title   = t(p.name, p.name_zh);
+
+  document.getElementById('pdr-title').textContent = title;
+  document.getElementById('pdr-body').innerHTML =
+    typeof marked !== 'undefined' ? marked.parse(content) : content.replace(/\n/g, '<br>');
+
+  const scroll = document.getElementById('pdr-scroll');
+  scroll.scrollTop = 0;
+  document.getElementById('pdr-progress').style.width = '0%';
+
+  const reader = document.getElementById('project-detail-reader');
+  reader.setAttribute('aria-hidden', 'false');
+  requestAnimationFrame(() => reader.classList.add('active'));
+}
+
+function closeProjectDetail() {
+  const reader = document.getElementById('project-detail-reader');
+  if (!reader) return;
+  reader.classList.remove('active');
+  reader.setAttribute('aria-hidden', 'true');
 }
 
 function buildEssays() {

@@ -846,14 +846,27 @@ ul { list-style: none; }
   padding: 2px 8px;
   border-radius: var(--radius);
 }
+.project-actions {
+  display: flex;
+  gap: 18px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
 .project-url {
   font-size: 12px;
   letter-spacing: 0.08em;
   color: var(--text-secondary);
-  margin-top: auto;
   transition: color var(--transition);
+  cursor: pointer;
 }
 .project-url:hover { color: var(--text-primary); }
+.project-visit-btn {
+  opacity: 0.5;
+}
+.project-visit-btn:hover {
+  opacity: 1;
+  color: var(--text-primary);
+}
 
 /* ── ESSAYS ── */
 .essays-list {
