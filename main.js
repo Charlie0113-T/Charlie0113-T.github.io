@@ -118,6 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   initPanel();
+  initAckModal();
 });
 
 // ── Nav: add border on scroll ──
@@ -176,6 +177,35 @@ document.querySelectorAll('.module-card').forEach((card) => {
     card.style.transition = 'transform 0.08s ease, background 0.25s ease, border-color 0.25s ease';
   });
 });
+
+/* ═══════════════════════════════════════════════
+   MODULE PANEL SYSTEM
+   ═══════════════════════════════════════════════ */
+
+function initAckModal() {
+  const modal     = document.getElementById('ack-modal');
+  const openBtn   = document.getElementById('ack-open-btn');
+  const closeBtn  = document.getElementById('ack-modal-close');
+  const backdrop  = document.getElementById('ack-modal-backdrop');
+  if (!modal) return;
+
+  const openAck = () => {
+    applyLang();
+    modal.classList.add('ack-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeAck = () => {
+    modal.classList.remove('ack-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  if (openBtn)  openBtn.addEventListener('click', openAck);
+  if (closeBtn) closeBtn.addEventListener('click', closeAck);
+  if (backdrop) backdrop.addEventListener('click', closeAck);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAck(); });
+}
 
 /* ═══════════════════════════════════════════════
    MODULE PANEL SYSTEM
@@ -276,6 +306,7 @@ const MILESTONES = [
     year: '2023',
     items: [
       { date: '2023', title: 'Invested in NASDAQ 100 Index Fund', title_zh: '投资纳斯达克100指数基金', desc: 'Made my first investment in the NASDAQ 100, marking the start of my financial journey.', desc_zh: '完成纳斯达克100的首次投资，开启了我的财务旅程。', major: true, tag: 'INVEST' },
+      { date: '2023', title: 'Joined Nanjing Beijing East Road Primary School Student Council', title_zh: '进入南京北京东路小学大队部', desc: 'Became a member of the student council, starting my leadership journey.', desc_zh: '成为大队部成员，开启领导力之路。', major: true, tag: 'LEADERSHIP' },
     ]
   },
   {
@@ -284,27 +315,33 @@ const MILESTONES = [
       { date: '2024-01-26', title: 'Dogs Travel Startup Event I', title_zh: '狗狗旅行创业活动 I', desc: 'Organized and led the first Dogs travel entrepreneurship event, exploring new business models with a passionate team.', desc_zh: '组织并主导了第一届狗狗旅行创业活动，与热情的团队共同探索新商业模式。', major: true, tag: 'STARTUP' },
       { date: '2024-05-01', title: 'Dogs Travel Startup Event II', title_zh: '狗狗旅行创业活动 II', desc: 'Held the second Dogs travel entrepreneurship event, further validating the concept and expanding the community.', desc_zh: '举办第二届狗狗旅行创业活动，进一步验证概念并扩大社区规模。', major: true, tag: 'STARTUP' },
       { date: '2024-09', title: 'First Encounter with AI Art, Music, and Writing', title_zh: '初次接触 AI 艺术、音乐与写作', desc: 'Explored generative AI for the first time, creating art, music, and written works with cutting-edge tools.', desc_zh: '首次探索生成式 AI，用前沿工具创作艺术、音乐与文字作品。', major: true, tag: 'AI' },
-      { date: '2024-11', title: 'Python NCT Level 1 Excellence', title_zh: 'Python NCT 一级优秀', desc: 'Achieved excellent results in the Python NCT Level 1 exam, demonstrating strong programming fundamentals.', desc_zh: '在 Python NCT 一级考试中取得优秀成绩，展现扎实的编程基础。', major: false, tag: 'PYTHON' },
+      { date: '2024-11', title: 'Python NCT Level 1 Excellence', title_zh: 'Python NCT 一级优秀', desc: 'Achieved excellent results in the Python NCT Level 1 exam, demonstrating strong programming fundamentals.', desc_zh: '在 Python NCT 一级考试中取得优秀成绩，展现扎实的编程基础。', major: false, tag: 'Code' },
     ]
   },
   {
     year: '2025',
     items: [
       { date: '2025-03-03', title: 'First Blockchain Experience & Investment', title_zh: '首次区块链体验与投资', desc: 'Dove into blockchain technology and made my first investment, opening a new chapter in tech and finance.', desc_zh: '深入区块链技术并完成首次投资，开启科技与金融融合的新篇章。', major: true, tag: 'BLOCKCHAIN' },
+      { date: '2026-03-07', title: 'First Stickman Charles Essay Published', title_zh: 'Stickman Charles首篇文章出炉', desc: 'Published my first essay as Stickman Charles, marking a new chapter in writing.', desc_zh: '以Stickman Charles身份发表首篇文章，开启写作新篇章。', major: true, tag: 'Think' },
+      { date: '2025-06-15', title: 'Admitted to Codemao Python Talent Class with Full Score', title_zh: '满分入选编程猫科技特长生Python班', desc: 'Selected for Codemao Python Talent Class with a perfect score.', desc_zh: '以满分成绩入选编程猫科技特长生Python班。', major: true, tag: 'Code' },
+      { date: '2025-07-05', title: 'National Youth Labor Skills & Intelligent Design Competition Python Silver Medal', title_zh: '全国青少年劳动技能与智能设计大赛Python中学组银牌', desc: 'Won the Silver Medal in the National Youth Labor Skills & Intelligent Design Competition (Python, Middle School Group).', desc_zh: '获得全国青少年劳动技能与智能设计大赛Python中学组银牌。', major: true, tag: 'Code' },
+      { date: '2025-08-06', title: 'Completed Integrated Math I Honors', title_zh: '完成Integrated Math I荣誉课程', desc: 'Completed the Integrated Math I Honors course.', desc_zh: '完成Integrated Math I荣誉课程。', major: true, tag: 'MATH' },
+      { date: '2025-08-10', title: 'Published First Collaborative AI Research on Zenodo', title_zh: '在Zenodo上传首个多人合作AI研究项目', desc: 'Published the collaborative AI research: Tao Chengfeng, C. T., Cheng Jiale, J. C., & Tong Yiyan, S. T. (2025). 6 AI Mathematics Ability Assessments. Zenodo. https://doi.org/10.5281/zenodo.17317013', desc_zh: '陶乘风, C. T., 程嘉乐, J. C., & 童一焱, S. T. (2025). 6 AI Mathematics Ability Assessments. Zenodo. https://doi.org/10.5281/zenodo.17317013', major: true, tag: 'AI' },
+      { date: '2025-09-28', title: 'Graduated from Codemao Advanced Python', title_zh: '完成编程猫Python高阶，顺利毕业', desc: 'Graduated from Codemao Advanced Python course.', desc_zh: '完成编程猫Python高阶课程，顺利毕业。', major: true, tag: 'Code' },
       { date: '2025-06-06', title: 'Invested in TSLA', title_zh: '投资特斯拉', desc: 'Added Tesla to my investment portfolio, betting on innovation and the future of mobility.', desc_zh: '将特斯拉纳入投资组合，押注创新与出行的未来。', major: false, tag: 'INVEST' },
-      { date: '2025-08-01', title: 'Discovered VS Code', title_zh: '发现 VS Code', desc: 'Started using Visual Studio Code, which greatly improved my coding efficiency and workflow.', desc_zh: '开始使用 Visual Studio Code，大幅提升了编码效率与工作流程。', major: false, tag: 'TOOLS' },
-      { date: '2025-09-14', title: 'Cardano Academy Master Level', title_zh: 'Cardano 学院大师级', desc: 'Achieved Master Level at Cardano Academy, deepening my understanding of blockchain and smart contracts.', desc_zh: '在 Cardano 学院取得大师级认证，深化了对区块链与智能合约的理解。', major: true, tag: 'CARDANO' },
-      { date: '2025-12-21', title: 'Launched My First C++ Website', title_zh: '发布首个 C++ 网站', desc: 'Deployed my first website built with C++, marking a milestone in my systems programming journey.', desc_zh: '部署了第一个用 C++ 构建的网站，标志着系统编程旅程的重要里程碑。', major: true, tag: 'C++' },
-      { date: '2025-12-21', title: 'Completed StoryForge DAO MVP', title_zh: '完成 StoryForge DAO MVP', desc: 'Finished and launched the MVP for my blockchain startup project, StoryForge DAO.', desc_zh: '完成并发布区块链创业项目 StoryForge DAO 的最小可行产品。', major: true, tag: 'DAO' },
+      { date: '2025-08-01', title: 'Discovered VS Code', title_zh: '发现 VS Code', desc: 'Started using Visual Studio Code, which greatly improved my coding efficiency and workflow.', desc_zh: '开始使用 Visual Studio Code，大幅提升了编码效率与工作流程。', major: false, tag: 'Code' },
+      { date: '2025-09-14', title: 'Cardano Academy Master Level', title_zh: 'Cardano 学院大师级', desc: 'Achieved Master Level at Cardano Academy, deepening my understanding of blockchain and smart contracts.', desc_zh: '在 Cardano 学院取得大师级认证，深化了对区块链与智能合约的理解。', major: true, tag: 'Blockchain' },
+      { date: '2025-12-21', title: 'Launched My First C++ Website', title_zh: '发布首个 C++ 网站', desc: 'Deployed my first website built with C++, marking a milestone in my systems programming journey.', desc_zh: '部署了第一个用 C++ 构建的网站，标志着系统编程旅程的重要里程碑。', major: true, tag: 'Code' },
+      { date: '2025-12-21', title: 'Completed StoryForge DAO MVP', title_zh: '完成 StoryForge DAO MVP', desc: 'Finished and launched the MVP for my blockchain startup project, StoryForge DAO.', desc_zh: '完成并发布区块链创业项目 StoryForge DAO 的最小可行产品。', major: true, tag: 'Startup' },
     ]
   },
   {
     year: '2026',
     items: [
-      { date: '2026-02-28', title: 'Launched stickmancharles.me', title_zh: '发布 stickmancharles.me', desc: 'Released my personal website, stickmancharles.me, to share my work and ideas with the world.', desc_zh: '发布个人网站 stickmancharles.me，向世界分享我的作品与想法。', major: true, tag: 'WEB' },
+      { date: '2026-02-28', title: 'Launched stickmancharles.me', title_zh: '发布 stickmancharles.me', desc: 'Released my personal website, stickmancharles.me, to share my work and ideas with the world.', desc_zh: '发布个人网站 stickmancharles.me，向世界分享我的作品与想法。', major: true, tag: 'Code' },
       { date: '2026-03-04', title: 'First Cardano Aiken LLM', title_zh: '首个 Cardano Aiken 大语言模型', desc: 'Deployed my first LLM using Cardano Aiken, pushing the boundaries of blockchain AI integration.', desc_zh: '使用 Cardano Aiken 部署首个大语言模型，突破区块链 AI 融合的边界。', major: true, tag: 'AI' },
-      { date: '2026-03-04', title: 'EchoForgeDAO MVP Complete', title_zh: 'EchoForgeDAO MVP 完成', desc: 'Completed the MVP for my blockchain project EchoForgeDAO, advancing decentralized content creation.', desc_zh: '完成区块链项目 EchoForgeDAO 的 MVP，推动去中心化内容创作向前迈进。', major: true, tag: 'DAO' },
-      { date: '2026-03-06', title: 'Read 5,234,000 Words of Literature', title_zh: '累计阅读 523 万字文学作品', desc: 'Achieved a personal record by reading over 5.23 million words, demonstrating dedication to literary exploration.', desc_zh: '创下个人记录，累计阅读超过 523 万字，展现对文学探索的坚定投入。', major: true, tag: 'LITERATURE' },
+      { date: '2026-03-04', title: 'EchoForgeDAO MVP Complete', title_zh: 'EchoForgeDAO MVP 完成', desc: 'Completed the MVP for my blockchain project EchoForgeDAO, advancing decentralized content creation.', desc_zh: '完成区块链项目 EchoForgeDAO 的 MVP，推动去中心化内容创作向前迈进。', major: true, tag: 'Startup' },
+      { date: '2026-03-06', title: 'Read 5,234,000 Words of Literature', title_zh: '累计阅读 523 万字文学作品', desc: 'Achieved a personal record by reading over 5.23 million words, demonstrating dedication to literary exploration.', desc_zh: '创下个人记录，累计阅读超过 523 万字，展现对文学探索的坚定投入。', major: true, tag: 'Think' },
     ]
   },
 ];
@@ -673,7 +710,113 @@ function bindEssayToggle() {
 }
 
 function buildMilestone() {
-  let html = `<div class="timeline">`;
+  const isZh = LANG === 'zh';
+
+  const mindmap = `
+  <div class="milestone-mindmap-wrap">
+    <div class="mm-section-label">${isZh ? '// 知识领域' : '// KNOWLEDGE DOMAINS'}</div>
+    <div class="mindmap-container">
+      <svg class="mindmap-svg" viewBox="0 0 660 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Main trunk -->
+        <line class="mm-trunk" pathLength="100"
+          x1="60" y1="130" x2="460" y2="130"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <!-- Left junction dot -->
+        <circle class="mm-dot mm-dot-left" cx="190" cy="130" r="3.5"/>
+        <!-- Left vertical branches -->
+        <line class="mm-vert mm-vert-top" pathLength="100"
+          x1="190" y1="130" x2="190" y2="50"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <line class="mm-vert mm-vert-bot" pathLength="100"
+          x1="190" y1="130" x2="190" y2="210"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <!-- Math extra branches: Code(upper), AI(mid), BC(lower) fan left from Math -->
+        <path class="mm-branch mm-b-math-code" pathLength="100"
+          d="M190,50 C145,35 100,20 60,15"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <path class="mm-branch mm-b-math-ai" pathLength="100"
+          d="M190,50 C140,51 90,52 40,52"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <path class="mm-branch mm-b-math-bc" pathLength="100"
+          d="M190,50 C145,65 100,80 60,88"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <!-- Math extra dots -->
+        <circle class="mm-dot mm-dot-code" cx="60" cy="15" r="3"/>
+        <circle class="mm-dot mm-dot-ai" cx="40" cy="52" r="3"/>
+        <circle class="mm-dot mm-dot-bc" cx="60" cy="88" r="3"/>
+        <!-- Lead extra branches: Comm(upper-left), Indep(lower-left) fan from Lead -->
+        <path class="mm-branch mm-b-lead-comm" pathLength="100"
+          d="M190,210 C145,195 100,182 60,172"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <path class="mm-branch mm-b-lead-indep" pathLength="100"
+          d="M190,210 C135,215 90,222 50,225"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <circle class="mm-dot mm-dot-comm" cx="60" cy="172" r="3"/>
+        <circle class="mm-dot mm-dot-indep" cx="50" cy="225" r="3"/>
+        <!-- Terminal dots left -->
+        <circle class="mm-dot mm-dot-math" cx="190" cy="50" r="3"/>
+        <circle class="mm-dot mm-dot-lead" cx="190" cy="210" r="3"/>
+        <!-- Right junction dot -->
+        <circle class="mm-jdot" cx="460" cy="130" r="5"/>
+        <!-- Right branches: invest & brain use elegant bezier curves -->
+        <path class="mm-branch mm-b1" pathLength="100"
+          d="M460,130 C492,130 502,52 580,52"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <line class="mm-branch mm-b2" pathLength="100"
+          x1="460" y1="130" x2="580" y2="130"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <path class="mm-branch mm-b3" pathLength="100"
+          d="M460,130 C492,130 502,208 580,208"
+          style="stroke-dasharray:100;stroke-dashoffset:100"/>
+        <!-- Terminal dots right -->
+        <circle class="mm-dot mm-dot-invest"  cx="580" cy="52"  r="3"/>
+        <circle class="mm-dot mm-dot-startup" cx="580" cy="130" r="3"/>
+        <circle class="mm-dot mm-dot-brain"   cx="580" cy="208" r="3"/>
+      </svg>
+      <div class="mm-node mm-n-math">
+        <div class="mm-icon-ring"><i class="fa-solid fa-calculator"></i></div>
+        <span class="mm-lbl">${isZh ? '数学' : 'Math'}</span>
+      </div>
+      <div class="mm-node mm-n-ai">
+        <div class="mm-icon-ring"><i class="fa-solid fa-robot"></i></div>
+        <span class="mm-lbl">AI</span>
+      </div>
+      <div class="mm-node mm-n-bc">
+        <div class="mm-icon-ring"><i class="fa-brands fa-bitcoin"></i></div>
+        <span class="mm-lbl">${isZh ? '区块链' : 'Blockchain'}</span>
+      </div>
+      <div class="mm-node mm-n-code">
+        <div class="mm-icon-ring"><i class="fa-solid fa-code"></i></div>
+        <span class="mm-lbl">${isZh ? '编程' : 'Code'}</span>
+      </div>
+      <div class="mm-node mm-n-lead">
+        <div class="mm-icon-ring"><i class="fa-solid fa-crown"></i></div>
+        <span class="mm-lbl">${isZh ? '领导力' : 'Leadership'}</span>
+      </div>
+      <div class="mm-node mm-n-comm">
+        <div class="mm-icon-ring"><i class="fa-solid fa-comments"></i></div>
+        <span class="mm-lbl">${isZh ? '沟通' : 'Comm'}</span>
+      </div>
+      <div class="mm-node mm-n-indep">
+        <div class="mm-icon-ring"><i class="fa-solid fa-user-secret"></i></div>
+        <span class="mm-lbl">${isZh ? '独立' : 'Indep.'}</span>
+      </div>
+      <div class="mm-node mm-n-invest">
+        <div class="mm-icon-ring"><i class="fa-solid fa-chart-line"></i></div>
+        <span class="mm-lbl">${isZh ? '投资' : 'Invest'}</span>
+      </div>
+      <div class="mm-node mm-n-startup">
+        <div class="mm-icon-ring"><i class="fa-solid fa-rocket"></i></div>
+        <span class="mm-lbl">${isZh ? '创业' : 'Startup'}</span>
+      </div>
+      <div class="mm-node mm-n-brain">
+        <div class="mm-icon-ring"><i class="fa-solid fa-brain"></i></div>
+        <span class="mm-lbl">${isZh ? '思考' : 'Think'}</span>
+      </div>
+    </div>
+  </div>`;
+
+  let html = mindmap + `<div class="timeline">`;
   MILESTONES.forEach(section => {
     html += `<div class="timeline-section-label">${section.year}</div>`;
     section.items.forEach(item => {

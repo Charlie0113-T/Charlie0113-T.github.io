@@ -218,19 +218,72 @@
 
   <!-- ─── FOOTER ─── -->
   <footer class="footer fade-in">
+    <div class="footer-ack-row">
+      <button class="ack-open-btn" id="ack-open-btn" data-en="♥ Acknowledgments" data-zh="♥ 鸣谢">♥ Acknowledgments</button>
+    </div>
     <div class="footer-inner">
       <span class="footer-copy">© 2026 Stickman Charles</span>
       <span class="footer-tagline" data-en="Simple is everything, just like stickman." data-zh="简单即一切，正如火柴人。">Simple is everything, just like stickman.</span>
       <div class="footer-social">
-        <a href="https://x.com/StickmanCharlz" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://discord.gg/EGsnYNcPp3" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://youtube.com/@StickmanCharles" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://stickmancharles.substack.com" target="_blank" aria-label="Substack"><i class="fa-solid fa-square-rss"></i></a>
-        <a href="https://www.linkedin.com/in/charles-tao-stickman-charles" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://mp.weixin.qq.com/s/hs4uXE5kq0a82lEpSpigsg" target="_blank" aria-label="WeChat"><i class="fab fa-weixin"></i></a>
+        <a href="https://x.com/StickmanCharlz" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://discord.gg/EGsnYNcPp3" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://youtube.com/@StickmanCharles" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://stickmancharles.substack.com" target="_blank" rel="noopener noreferrer" aria-label="Substack"><i class="fa-solid fa-square-rss"></i></a>
+        <a href="https://www.linkedin.com/in/charles-tao-stickman-charles" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://mp.weixin.qq.com/s/hs4uXE5kq0a82lEpSpigsg" target="_blank" rel="noopener noreferrer" aria-label="WeChat"><i class="fab fa-weixin"></i></a>
       </div>
     </div>
   </footer>
+
+  <!-- ─── ACKNOWLEDGMENTS MODAL ─── -->
+  <div class="ack-modal" id="ack-modal" aria-hidden="true">
+    <div class="ack-modal-backdrop" id="ack-modal-backdrop"></div>
+    <div class="ack-modal-box">
+      <div class="ack-modal-header">
+        <span class="ack-modal-title" data-en="// ACKNOWLEDGMENTS" data-zh="// 鸣谢">// ACKNOWLEDGMENTS</span>
+        <button class="ack-modal-close" id="ack-modal-close">✕ CLOSE</button>
+      </div>
+      <div class="ack-modal-body">
+        <div class="acknowledgments-grid">
+          <div class="ack-card">
+            <div class="ack-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3 class="ack-name" data-en="Dad" data-zh="爸爸">Dad</h3>
+            <p class="ack-desc" data-en="Constantly supporting me on the path forward. My first reader. Without him, this website would not exist." data-zh="在我前进的道路上不断支持我，我的一位读者，没有他就没有这个网站。">Constantly supporting me on the path forward. My first reader. Without him, this website would not exist.</p>
+          </div>
+          <div class="ack-card">
+            <div class="ack-icon"><i class="fa-solid fa-heart"></i></div>
+            <h3 class="ack-name" data-en="Mom" data-zh="妈妈">Mom</h3>
+            <p class="ack-desc" data-en="My second reader and steadfast supporter." data-zh="我的第二个读者，也是我的坚定支持者。">My second reader and steadfast supporter.</p>
+          </div>
+          <div class="ack-card">
+            <div class="ack-icon"><i class="fa-solid fa-book"></i></div>
+            <h3 class="ack-name" data-en="Prof. Sun" data-zh="孙教授">Prof. Sun</h3>
+            <p class="ack-desc" data-en="My enlightenment mentor on the path to wisdom. Gave me the greatest encouragement." data-zh="我认知路上的启蒙导师，给予我最大的鼓励。">My enlightenment mentor on the path to wisdom. Gave me the greatest encouragement.</p>
+          </div>
+          <div class="ack-card">
+            <div class="ack-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3 class="ack-name" data-en="Uncle" data-zh="伯伯">Uncle</h3>
+            <p class="ack-desc" data-en="My first patron reader. Thank you!" data-zh="我的第一位打赏读者，谢谢您！">My first patron reader. Thank you!</p>
+          </div>
+          <div class="ack-card">
+            <div class="ack-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3 class="ack-name">Jackywine</h3>
+            <p class="ack-desc" data-en="AI pioneer (@Jackywine on X). The catalyst for this idea." data-zh="AI领域的大牛，X账号@Jackywine，也是催生我此想法的人。">AI pioneer (<a href="https://x.com/Jackywine" target="_blank" rel="noopener noreferrer" class="ack-link">@Jackywine</a> on X). The catalyst for this idea.</p>
+          </div>
+          <div class="ack-card">
+            <div class="ack-icon"><i class="fa-solid fa-camera"></i></div>
+            <h3 class="ack-name">Brian Bray</h3>
+            <p class="ack-desc" data-en="My English teacher, master of photography and art. This website was inspired by his vision." data-zh="我的英语老师，摄影和艺术的大师。网站受到了他的启发。">My English teacher, master of photography and art. This website was inspired by his vision.</p>
+          </div>
+          <div class="ack-card">
+            <div class="ack-icon"><i class="fa-brands fa-bitcoin"></i></div>
+            <h3 class="ack-name">田野菜 (Tian Ye Cai)</h3>
+            <p class="ack-desc" data-en="A trusted friend on the Cardano network (@tianyecai on X). Thank you for your constant affirmation!" data-zh="Cardano 链上的良师益友，X账号：@tianyecai，谢谢您对我一贯的肯定！">A trusted friend on the Cardano network (<a href="https://x.com/tianyecai" target="_blank" rel="noopener noreferrer" class="ack-link">@tianyecai</a> on X). Thank you for your constant affirmation!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ─── MODULE PANEL ─── -->
   <div class="module-panel" id="module-panel" aria-hidden="true">
