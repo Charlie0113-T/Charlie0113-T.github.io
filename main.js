@@ -558,7 +558,6 @@ const MILESTONES = [
       { date: '2026-03-04', title: 'EchoForgeDAO MVP Complete', title_zh: 'EchoForgeDAO MVP 完成', desc: 'Completed the MVP for my blockchain project EchoForgeDAO, advancing decentralized content creation.', desc_zh: '完成区块链项目 EchoForgeDAO 的 MVP，推动去中心化内容创作向前迈进。', major: true, tag: 'Startup' },
       { date: '2026-03-06', title: 'Read 5,234,000 Words of Literature', title_zh: '累计阅读 523 万字文学作品', desc: 'Achieved a personal record by reading over 5.23 million words, demonstrating dedication to literary exploration.', desc_zh: '创下个人记录，累计阅读超过 523 万字，展现对文学探索的坚定投入。', major: true, tag: 'Think' },
       { date: '2026-03-07', title: 'First Stickman Charles Essay Published', title_zh: 'Stickman Charles首篇文章出炉', desc: 'Published my first essay as Stickman Charles, marking a new chapter in writing.', desc_zh: '以Stickman Charles身份发表首篇文章，开启写作新篇章。', major: true, tag: 'Think' },
-      { date: '2026-03-14', title: 'First Principles Essay Published', title_zh: '第一性原理文章发表', desc: 'Published my second major essay on First Principles thinking, exploring independent reasoning and challenging conventions.', desc_zh: '发表第二篇重要文章《第一性原理》，深入探讨独立思考和挑战常规的思维方式。', major: true, tag: 'Think' },
         { date: '2026-03-13', title: 'First Principles Essay Published', title_zh: '第一性原理文章发表', desc: 'Published my second major essay on First Principles thinking, exploring independent reasoning and challenging conventions.', desc_zh: '发表第二篇重要文章《第一性原理》，深入探讨独立思考和挑战常规的思维方式。', major: true, tag: 'Think' },
     ]
   },
