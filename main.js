@@ -312,7 +312,7 @@ const ESSAYS = [
     type: 'essay',
     title: 'Stickman Charles — First Principles',
     title_zh: 'Stickman Charles 第一性原理',
-    date: '2026/3/14',
+    date: '2026/3/13',
     readTime: '约8分钟',
     content: `# Stickman Charles — First Principles\n\nHello, I'm Stickman Charles.\n\n## What are first principles?\n\nAristotle argued that within any system of knowledge there exist the most fundamental truths—truths that require no prior assumptions. These are called _first principles_. If you understand them, you can derive the rest of the logic within that domain.\n\nThe physicist Richard Feynman advocated a similar attitude: _do your own homework_. Instead of blindly trusting authority, work through the reasoning yourself and derive the result.\n\nWhen Jeff Bezos was building Amazon, he asked his team to return to the fundamental question of user experience rather than competing through proxy metrics—numbers created within an existing framework rather than objective reality.\n\nIn the early days of SpaceX, Elon Musk ignored the industry assumption that rockets must be extremely expensive. Instead, he examined the price of every raw material on the London Metal Exchange. The result: the material cost accounted for only about 2% of the market price of a rocket.\n\nFrom these examples, first-principles thinking can be understood as a way of thinking that combines **independent reasoning**, **returning to fundamentals**, and **challenging conventions**.\n\nThese three elements reinforce one another. None of them stands alone.\n\n---\n\n## How can you develop first-principles thinking?\n\n**Step 1: Ask one more "why."**\n\nMuch of what you believe to be knowledge is actually borrowed experience. Ask yourself one more "why."\n\nOur brains—especially the instinctive and emotional systems—prefer analogical thinking. We rely on the experience of others because it saves energy. But this does not mean every question must be pursued endlessly. The goal is to find a balance between training your thinking ability and managing your cognitive energy. Save your effort for the problems that truly matter.\n\n**Step 2: Learn across disciplines.**\n\nStudy the fundamental laws of fields such as physics, mathematics, and biology. These disciplines provide the underlying structure that will help you in the next step.\n\n**Step 3: Deconstruct the problem.**\n\nUse what you have learned to break a problem down until it cannot be reduced any further. Then separate the constraints you discover into two categories: **human constraints** and **physical constraints**.\n\nFirst-principles thinking focuses on physical constraints and questions everything that is merely human convention.\n\n**Step 4: Search for the shortest path.**\n\nOnce the facts are clear, ask yourself: what is the most efficient path to the goal?\n\nDuring this process, external opinions matter less. First-principles thinking, by definition, often challenges existing norms.\n\n---\n\n## How I apply first-principles thinking\n\nCognition can be seen as a system built from many clear and accurate concepts. My goal is to explain, compress, and help people master these concepts.\n\nReduce ideas to their essence.\n\n_Simple is everything._\n\nLet's simplify thinking and action down to their fundamentals.\n\nFinally, thank you for reading. If you have thoughts or suggestions about first-principles thinking, feel free to contact me at:\n\n**[charlesisworkinghard@gmail.com](mailto:charlesisworkinghard@gmail.com)**\n\nKeep thinking, and take care.`,
     content_zh: `# Stickman Charles 第一性原理\n\n你好，我是 Stickman Charles。\n\n## 什么是第一性原理？\n\n亚里士多德认为，在任何知识体系中，都存在一些最基础的、不需要任何前提就能成立的"真理"，也被称作"第一原理"。如果你了解这些"第一原理"，你就可以推导出该领域内的一切逻辑。\n\n同时，著名物理学家理查德·费曼提倡"自己做功课"，不去盲目听信权威的结论，而是自己推导结果。\n\n杰夫·贝佐斯在经营亚马逊时，要求团队回归最底层的用户体验本质，而不是和竞争对手比拼代理指标——即别人在既有逻辑下产生的结论，而非客观事实。\n\n埃隆·马斯克在 SpaceX 初期进行火箭制造时，没有理会外界对火箭"昂贵造假"的质疑。他选择把火箭每种原材料的价格都在伦敦交易所查询一遍。最后得到的结果是，原材料成本仅占市场报价的 2%。\n\n由此可见，第一性原理就是一个集独立思考、回归本质和挑战常规于一身的思维方式。\n\n这三者之间相辅相成，缺一不可。\n\n---\n\n## 如何让自己掌握"第一性原理"这个思维方式？\n\n**第一步，多问一个为什么。**\n\n通常来说，你大脑里的大多数"知识"其实只是别人的经验，你需要多问自己一个为什么。我们的大脑，尤其是本能脑和情绪脑，都倾向于使用"类比"思维，运用别人的经验，因为这样可以节省许多能量的消耗。但这并不意味着你需要把每个问题都刨根问底。我们要做的是在锻炼能力和能量消耗之间找到一个平衡点，把你的能量留给真正重要的问题。\n\n**第二步，跨界学习。**\n\n你需要学习一些物理、数学和生物的最底层定律。这对下一步的拆解会有很大的帮助。\n\n**第三步，开始拆解。**\n\n你需要运用之前学到的知识，把你的目标拆解到不能再拆解的状态，再把你得出的约束划分为人为约束和物理约束。第一性原理只考虑物理约束，质疑一切人为约束。\n\n**第四步，寻找最短路径。**\n\n基于这些事实，你实现目标的最高效路径会是什么？在这个过程中，不要在意外界对你的评价，因为"第一性原理"本身就是挑战常规的。\n\n---\n\n## 我是怎样运用第一性原理的？\n\n所谓认知，其实就是足够多清晰、正确和准确的概念组合而来的系统。而我将会讲解、压缩，并帮助大家掌握这些概念。简单到本质，Simple is everything。\n\n让我们一起将思考与行动化简到本质。\n\n最后，感谢你的耐心。如果你有任何关于第一性原理的想法和建议，请通过 charlesisworkinghard@gmail.com 联系我，期待你的思考！\n\n保持思考，保重。`,
@@ -326,6 +326,14 @@ const ESSAYS = [
     content: `# The Endless Tunnel
 
 Strictly speaking, this is not a letter, because it is not written in the format of one. It is closer to a short essay. In it, I share some thoughts about the seven years of education I experienced in China, along with a few simple observations I made after coming to Canada.
+
+  Author’s Note
+
+  This article was written during my first summer after arriving in Canada. At that time, I looked back on the seven years of education I experienced in China and recorded some personal observations.
+
+  Reading it again now, I can clearly feel that my way of thinking has changed. Because of this, I made some minor revisions to certain expressions to make the language more rational, while still preserving the overall thinking of that time.
+
+  I believe that documenting the evolution of one’s thinking is itself part of growth.
 
 Originally, I planned to write several letters to you. Unfortunately, because I also had to prepare for an English exam, I ended up writing only one. I chose what I believe is the most important topic and would also like to hear your thoughts.
 
@@ -551,6 +559,7 @@ const MILESTONES = [
       { date: '2026-03-06', title: 'Read 5,234,000 Words of Literature', title_zh: '累计阅读 523 万字文学作品', desc: 'Achieved a personal record by reading over 5.23 million words, demonstrating dedication to literary exploration.', desc_zh: '创下个人记录，累计阅读超过 523 万字，展现对文学探索的坚定投入。', major: true, tag: 'Think' },
       { date: '2026-03-07', title: 'First Stickman Charles Essay Published', title_zh: 'Stickman Charles首篇文章出炉', desc: 'Published my first essay as Stickman Charles, marking a new chapter in writing.', desc_zh: '以Stickman Charles身份发表首篇文章，开启写作新篇章。', major: true, tag: 'Think' },
       { date: '2026-03-14', title: 'First Principles Essay Published', title_zh: '第一性原理文章发表', desc: 'Published my second major essay on First Principles thinking, exploring independent reasoning and challenging conventions.', desc_zh: '发表第二篇重要文章《第一性原理》，深入探讨独立思考和挑战常规的思维方式。', major: true, tag: 'Think' },
+        { date: '2026-03-13', title: 'First Principles Essay Published', title_zh: '第一性原理文章发表', desc: 'Published my second major essay on First Principles thinking, exploring independent reasoning and challenging conventions.', desc_zh: '发表第二篇重要文章《第一性原理》，深入探讨独立思考和挑战常规的思维方式。', major: true, tag: 'Think' },
     ]
   },
 ];
@@ -799,7 +808,7 @@ function buildEssays() {
   return `
     <div class="essay-groups">
       <div class="essays-section">
-        <div class="essays-section-title">Essayes</div>
+        <div class="essays-section-title">Essays</div>
         <div class="essays-list">
           ${essaysHtml || `<div class="essay-empty">${emptyText}</div>`}
         </div>
