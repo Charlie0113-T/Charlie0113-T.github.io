@@ -528,9 +528,9 @@ const MILESTONES = [
   {
     year: '2024',
     items: [
+      { date: '2024-01-21', title: 'First Encounter with AI Art, Music, and Writing', title_zh: '初次接触 AI 艺术、音乐与写作', desc: 'Explored generative AI for the first time, creating art, music, and written works with cutting-edge tools.', desc_zh: '首次探索生成式 AI，用前沿工具创作艺术、音乐与文字作品。', major: true, tag: 'AI' },
       { date: '2024-01-26', title: 'Dogs Travel Startup Event I', title_zh: '狗狗旅行创业活动 I', desc: 'Organized and led the first Dogs travel entrepreneurship event, exploring new business models with a passionate team.', desc_zh: '组织并主导了第一届狗狗旅行创业活动，与热情的团队共同探索新商业模式。', major: true, tag: 'STARTUP' },
       { date: '2024-05-01', title: 'Dogs Travel Startup Event II', title_zh: '狗狗旅行创业活动 II', desc: 'Held the second Dogs travel entrepreneurship event, further validating the concept and expanding the community.', desc_zh: '举办第二届狗狗旅行创业活动，进一步验证概念并扩大社区规模。', major: true, tag: 'STARTUP' },
-      { date: '2024-09', title: 'First Encounter with AI Art, Music, and Writing', title_zh: '初次接触 AI 艺术、音乐与写作', desc: 'Explored generative AI for the first time, creating art, music, and written works with cutting-edge tools.', desc_zh: '首次探索生成式 AI，用前沿工具创作艺术、音乐与文字作品。', major: true, tag: 'AI' },
       { date: '2024-11', title: 'Python NCT Level 1 Excellence', title_zh: 'Python NCT 一级优秀', desc: 'Achieved excellent results in the Python NCT Level 1 exam, demonstrating strong programming fundamentals.', desc_zh: '在 Python NCT 一级考试中取得优秀成绩，展现扎实的编程基础。', major: false, tag: 'Code' },
     ]
   },
