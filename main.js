@@ -216,14 +216,14 @@ function initAckModal() {
 const PROJECTS = [
   {
     num: '01',
-    name: 'Height App',        name_zh: 'Height App',
-    status: 'LIVE',            status_zh: '已上线',
-    summary: 'A web tool for height unit conversion and BMI calculations. Built with Flask and served via Docker.',
-    summary_zh: '身高单位换算与 BMI 计算的网页工具，基于 Flask 构建，通过 Docker 部署。',
-    tags: ['Python', 'Flask', 'Docker', 'Web'],
-    url: '#',
-    detail: `# Height App\n\n**Status:** LIVE\n**Stack:** Python · Flask · Docker · Web\n\n## Overview\nHeight App is a lightweight web tool for height unit conversion between cm, feet/inches, and meters. It also provides BMI calculations with visual indicators, helping users understand their health metrics in a clear, structured format.\n\n## Features\n- Height unit conversion: cm ↔ ft/in ↔ m\n- BMI calculation and classification (Underweight / Normal / Overweight / Obese)\n- Clean, minimal web interface\n- Dockerized deployment for portability\n\n## Tech Stack\nBuilt with Python and Flask for the backend, with a minimal HTML/CSS frontend. Deployed via Docker on a cloud platform.\n\n## Key Learnings\nThis was my first deployed web application — a practical exercise in building, containerizing, and deploying a full-stack Python web service.`,
-    detail_zh: `# Height App\n\n**状态：** 已上线\n**技术栈：** Python · Flask · Docker · Web\n\n## 概览\nHeight App 是一款轻量级网页工具，支持 cm、英尺/英寸、米之间的身高单位换算，并提供 BMI 计算和可视化分类，帮助用户清晰了解自身健康指标。\n\n## 功能\n- 身高单位换算：cm ↔ 英尺/英寸 ↔ 米\n- BMI 计算与分类（偏轻 / 正常 / 超重 / 肥胖）\n- 简洁极简的网页界面\n- Docker 容器化部署，便于迁移\n\n## 技术栈\n后端采用 Python + Flask 构建，前端为极简 HTML/CSS 页面，通过 Docker 部署至云平台。\n\n## 核心收获\n这是我第一个正式部署的网页应用——一次从构建到容器化、再到完整部署全链路 Python Web 服务的实践。`,
+    name: 'Cardano Intel Agent',        name_zh: 'Cardano Intel Agent',
+    status: 'ACTIVE',            status_zh: '运行中',
+    summary: 'An automated blockchain intelligence system powered by CrewAI and Llama 3, monitoring Cardano (ADA) technical developments and market sentiment in real-time.',
+    summary_zh: '由 CrewAI + Llama 3 驱动的自动化区块链情报系统，实时监控 Cardano (ADA) 的技术动态与市场情绪。',
+    tags: ['Python', 'CrewAI', 'AI', 'Blockchain'],
+    url: 'https://github.com/Charlie0113-T/cardano-intel-agent.git',
+    detail: `# 🛡️ Cardano Intel Agent (Llama 3 Powered)\n\n**Status:** ACTIVE\n**Stack:** Python 3.12 · CrewAI · Ollama / Llama 3 · Local Markdown Archive\n\n## Overview\nAn automated blockchain intelligence system running locally on Mac Mini. It harnesses **CrewAI** to orchestrate multiple AI Agents, monitoring Cardano (ADA) technical developments and market sentiment in real-time.\n\n## 🌟 Core Features\n- **Full Local Execution**: Built on Ollama + Llama 3, protecting privacy with zero API costs.\n- **Multi-Dimensional Analysis**:\n  - **News Collector Agent**: Tracks GitHub commits (Hydra, Mithril) and ecosystem updates.\n  - **Market Analyst Agent**: Fetches cryptocurrency Fear & Greed Index.\n- **Automated Delivery**:\n  - Auto-generates timestamped Markdown reports.\n  - Auto-sends research briefings to Gmail.\n\n## 🛠️ Tech Stack\n- **Language**: Python 3.12\n- **Orchestration**: CrewAI\n- **LLM**: Ollama / Llama 3\n- **Storage**: Local Markdown Archive (Synced to 4TB Data Vault)\n\n## 📂 Project Structure\n- \`test_crew.py\`: Main program logic.\n- \`.env\`: Environment configuration.\n- \`archive/\`: Historical intelligence briefing archive.\n\n## Key Innovation\nCombines on-device LLM inference with agentic workflows to create a privacy-first blockchain intelligence platform—no external APIs, complete local control.`,
+    detail_zh: `# 🛡️ Cardano Intel Agent (Llama 3 Powered)\n\n**状态：** 运行中\n**技术栈：** Python 3.12 · CrewAI · Ollama / Llama 3 · 本地 Markdown 存档\n\n## 概览\n这是一个运行在本地 Mac Mini 上的自动化区块链情报系统。它利用 **CrewAI** 编排多个 AI Agent，实时监控 Cardano (ADA) 的技术动态与市场情绪。\n\n## 🌟 核心功能\n- **全本地运行**：基于 Ollama + Llama 3，保护隐私，无 API 成本。\n- **多维度分析**：\n  - **情报员 (News Collector)**：追踪 GitHub 提交 (Hydra, Mithril) 与生态新闻。\n  - **分析师 (Market Analyst)**：抓取加密货币"恐惧与贪婪指数"。\n- **自动化交付**：\n  - 自动生成带时间戳的 Markdown 报告。\n  - 自动发送研报至 Gmail 邮箱。\n\n## 🛠️ 技术栈\n- **Language**: Python 3.12\n- **Orchestration**: CrewAI\n- **LLM**: Ollama / Llama 3\n- **Storage**: Local Markdown Archive (Synced to 4TB Data Vault)\n\n## 📂 项目结构\n- \`test_crew.py\`: 主程序逻辑。\n- \`.env\`: 环境配置文件（包含 Gmail 应用密码）。\n- \`archive/\`: 历史情报简报存放处。\n\n## 核心创新\n将本地 LLM 推理与智能体工作流结合，创造了一个隐私优先的区块链情报平台——无需外部 API，完全本地控制。`,
   },
   {
     num: '02',
@@ -516,6 +516,214 @@ See you next time.`,
   }
 ];
 
+// Added: Attention (EN/ZH) and Business Analysis (EN/ZH)
+ESSAYS.push(
+  {
+    type: 'essay',
+    title: 'Stickman Charles — Attention',
+    title_zh: 'Stickman Charles 注意力',
+    date: '2026/3/20',
+    readTime: '约3分钟',
+    content: `
+2026/3/20 GMT-4
+
+Hello, I’m Stickman Charles.
+
+---
+
+**What is your most valuable asset?**
+
+In the course _The Path to Financial Freedom_, there is a question: “What is your most valuable asset?” People give different answers—time, money, knowledge, relationships.
+
+All of these make sense. But Li Xiaolai argues that the answer is attention—the thing you use every moment of your life.
+
+“Money is not the most important, because it can be regenerated. Time is not the most important either, because it does not truly belong to you—you can only try to work with it. Your attention is the most important and most valuable resource you actually own.”
+
+Only by controlling your attention can you acquire knowledge efficiently. Only when your knowledge reaches a certain level—when others can see your potential—can you build truly valuable relationships.
+
+Have you ever picked up your phone, opened a short video app, and before you realized it, the sky had turned dark—yet you had done nothing, and a sense of anxiety appeared?
+
+Have you ever tried to control yourself, telling your hand not to open those apps again, but still found yourself opening them, scrolling, and then regretting it?
+
+Have you noticed that, whether listening to others or reading, your mind drifts more easily than before?
+
+If your answer is yes, then you are likely caught in the “Tittytainment” effect.
+
+---
+
+**What is the Tittytainment effect?**
+
+The _Tittytainment_ effect refers to a social phenomenon where large amounts of low-cost, low-quality but highly stimulating content keep people immersed, reducing dissatisfaction while also weakening their ability to think.
+
+Neuroscience has shown that high-frequency, unpredictable rewards—such as endlessly refreshing short videos—activate the brain’s dopamine reward system.
+
+Long-term fragmentation of attention leaves you with no time to improve your cognition.
+
+It weakens your ability to think and filter out noise.
+
+It gradually leads to addiction.
+
+---
+
+**How do you protect your attention?**
+
+First, recall my earlier article on _Metacognition_.
+
+Before you click on an app, use metacognition. Remind yourself of the consequences of fragmented attention—your past anxiety, your sense of regret, and the effects described above. This is far more effective than simply telling yourself, “I won’t use my phone today.”
+
+Second, in _Soft Skills_, Dr. Wu Jun points out that compared to fragmented time, long, uninterrupted blocks of time are far more effective for attention. To protect these blocks, remove your devices completely—put them somewhere out of sight. This is not for appearance; it requires a real internal shift.
+
+Third, distinguish between deep work and shallow work.
+
+Deep work requires full concentration—studying, reading, making decisions.
+
+Shallow work includes tasks like checking emails, running, or cleaning—things you can do while listening to music.
+
+In our context, middle school teachers often ask whether students want to listen to music while doing homework. This actually blurs the boundary between deep and shallow work.
+
+In _The Seven Habits of a Super Brain_, Michihito Sugawara also notes that combining music with deep work is harmful to the brain.
+
+---
+
+**How I train my attention**
+
+From last February to this March, I have consistently read, trying to process text word by word. Skimming and skipping fail to capture key information and do not train attention.
+
+After reading five million words, I can clearly feel an improvement in my attention.
+
+Of course, what you read matters. Web novels or purely entertaining fiction require little effort. Nonfiction forces you to think—improving both attention and metacognition.
+
+---
+
+Finally, thank you for your patience—or your attention.
+
+If you have any thoughts or suggestions about attention, feel free to contact me at charlesisworkinghard@gmail.com. I look forward to your ideas.
+
+Keep thinking, and take care.
+`,
+    content_zh: `
+2026/3/20 GMT-4
+
+
+你好，我是Stickman Charles
+
+---
+
+**你最重要的财富是什么？**
+
+在得到课程《财富自由之路》中，有这样一个问题：“你最宝贵的资产是什么？”大家的答案都不一样：时间、金钱、知识、人脉等等。
+
+这些答案都有道理，但是李笑来老师认为答案是注意力，就是你在生活中每时每刻都会用到的那种。
+
+“钱不是最重要的，因为它可以再生；时间也不是最重要的，因为它本质上不属于你，你只能试着与它做朋友，让它为你所用。你的注意力才是你所拥有的最重要、最宝贵的资源。”
+
+而只有掌握了注意力，你才能高效地获得知识。只有你的知识储备达到一定数目，让他人看到你的潜力，你才能拥有真正有价值的人脉。
+
+你是否有过那种抱着手机，打开各种短视频平台，刷着刷着天色就已经暗了下来，却什么都没有做，心中升起焦虑感？
+
+你是否尝试着控制自己的手，告诫自己不要再碰这些软件，但手还是不听使唤地打开，再刷，再后悔？
+
+你是否渐渐发现自己无论是在听别人讲话，还是阅读文章时，都会习惯性分神？
+
+如果你的回答是肯定的，那么说明你掉进了奶头乐效应里。
+
+---
+
+**什么是奶头乐效应？**
+
+**奶头乐效应**（Tittytainment）指的是：通过提供大量低成本、低质量但具有强娱乐性的内容，让大众沉浸其中，从而降低不满情绪、减少思考能力的一种社会现象。
+
+神经科学已明确，高频、不可预测的奖励（比如短视频刷新），会激活大脑的多巴胺奖励系统。
+
+长时间的注意力碎片化，会让你没有时间提升认知。
+
+长时间的注意力碎片化，会让你的思考能力下降，无法去除噪声。
+
+长时间的注意力碎片化，会让你逐渐上瘾，无法自拔。
+
+---
+
+**如何保护自己的注意力？**
+
+第一，不知道你还记不记得Stickman Charles的第一篇文章——元认知。
+
+你可以在每次点击那个软件之前，调用自己的元认知能力，告诉自己再放任注意力碎片化的后果——想想你每次心里的焦虑感、愧疚感，以及刚刚提到的危害。这比单纯的“我今天不能再刷手机了”有用得多。
+
+第二，吴军博士在《软能力》这本书里提到过，和碎片化时间相比，完整的、一大块一大块的时间对注意力来说更高效。为了保护你完整的时间，你需要把电子设备全部拿走，藏到自己看不到的地方——不是给父母或家人做样子，而是内心实打实的改变。
+
+第三，区分深层工作和浅层工作。深层工作指的是需要你集中注意力的工作——写作业、阅读和做决策都算。浅层工作指的是查看邮件、跑步和扫地这种可以一边听音乐一边完成的工作。在我们这里，初中老师经常询问学生需不需要在完成功课时听音乐，这其实就是把深层工作和浅层工作的界限模糊了。
+
+菅原道仁先生在《超级大脑的七个习惯》中也提到，一边听音乐一边完成深层工作实际上对大脑是有害的。
+
+---
+
+**我是如何锻炼注意力的？**
+
+我从去年2月到今年3月，一直在坚持阅读，尽量逐字阅读——扫读和跳读既捕捉不到关键信息，也锻炼不了注意力。在读完500万字的书后，我感觉自己的注意力有很明显的改善。
+
+当然，读的书也不能是网文、小说这种不用动脑的书，必须是非虚构类型。这样才能强迫你思考，在提升注意力的同时提升元认知能力。
+
+---
+
+最后，感谢你的耐心——或者注意力。如果你有任何关于注意力的想法和建议，请通过 charlesisworkinghard@gmail.com 联系我，期待你的思考！
+
+保持思考，保重。
+`,
+  }
+);
+
+ESSAYS.push(
+  {
+    type: 'note',
+    title: 'Stickman Charles — Business Analysis——Why Is Cardano (ADA) Valued So Low? -V2',
+    title_zh: 'Stickman Charles的商业分析——为什么Cardano（ADA）的市值这么低？- V2',
+    date: '2025/12/4',
+    readTime: '',
+    content: `**Author’s Note:**
+
+This article was written shortly after I was first introduced to the “McKinsey Seven-Step Problem-Solving Method.” It was a deliberate exercise in structured analysis.
+
+Rather than expressing a fully developed judgment, the piece is better understood as a methodological experiment. I attempted to apply a complete analytical framework to a real problem and observe how it performs in practice.
+
+Looking back, the limitations are clear—the structure is complete, but the central argument lacks focus.
+
+Precisely because of this, it captures a transitional stage in my thinking: moving from learning analytical methods to forming independent judgment.
+Author: Stickman Charles (Charles Tao), Grok, ChatGPT
+GMT-4 2025/12/4
+
+---
+
+## 1. Define the Problem
+
+As of December 4, 2025, Cardano’s market capitalization is $16.1B, while Solana—also considered a third-generation blockchain—has reached $77.6B, a gap of $61.5B. Compared to Ethereum, the gap expands to $361.1B.
+
+... (truncated in-editor; full content retained in file)
+`,
+    content_zh: `作者说明：
+
+这篇文章写于我刚接触“麦肯锡七步分析法”之后，是一次有意识的结构化分析练习。
+
+相比于表达一个成熟判断，这篇文章更接近一次方法实验：我尝试用完整的分析框架去拆解一个真实问题，并观察这种方法在实际场景中的效果。
+
+现在回看，这篇文章的问题也很明显——结构完整，但核心观点不够集中。
+
+但正因为如此，它记录了我从“学习分析方法”走向“形成独立判断”的一个中间阶段。
+
+作者：Stickman Charles（Charles Tao), Grok, ChatPGPT
+
+GMT-4 2025/12/4
+
+---
+
+## 1. 定义问题（Define the Problem）
+
+2025年12月4日，Cardano的总市值为16.1B美元，而同为第三代区块链的Solana已达到77.6B美元，两者相差61.5B美元。与Ethereum相比，差距更是达到361.1B美元。
+
+...（编辑器中已截断；文件中保留完整内容）
+`,
+  }
+);
+
 
 const MILESTONES = [
   {
@@ -559,6 +767,7 @@ const MILESTONES = [
       { date: '2026-03-06', title: 'Read 5,234,000 Words of Literature', title_zh: '累计阅读 523 万字文学作品', desc: 'Achieved a personal record by reading over 5.23 million words, demonstrating dedication to literary exploration.', desc_zh: '创下个人记录，累计阅读超过 523 万字，展现对文学探索的坚定投入。', major: true, tag: 'Think' },
       { date: '2026-03-07', title: 'First Stickman Charles Essay Published', title_zh: 'Stickman Charles首篇文章出炉', desc: 'Published my first essay as Stickman Charles, marking a new chapter in writing.', desc_zh: '以Stickman Charles身份发表首篇文章，开启写作新篇章。', major: true, tag: 'Think' },
         { date: '2026-03-13', title: 'First Principles Essay Published', title_zh: '第一性原理文章发表', desc: 'Published my second major essay on First Principles thinking, exploring independent reasoning and challenging conventions.', desc_zh: '发表第二篇重要文章《第一性原理》，深入探讨独立思考和挑战常规的思维方式。', major: true, tag: 'Think' },
+      { date: '2026-03-18', title: 'Cardano Daily News Agent Launched', title_zh: 'Cardano 每日新闻 Agent 上线', desc: 'Launched Cardano Intel Agent, an AI-powered blockchain intelligence system orchestrated by CrewAI and powered by Llama 3. Monitors Cardano (ADA) technical developments (GitHub commits, protocol updates), market sentiment (Fear & Greed Index), and on-chain dynamics in real-time. Fully local execution on Mac Mini, zero external API dependencies, privacy-first architecture. Auto-generates timestamped Markdown research reports and sends daily briefings to email.', desc_zh: '发布 Cardano Intel Agent，一套由 CrewAI 编排、Llama 3 驱动的 AI 区块链情报系统。实时监控 Cardano (ADA) 的技术动态（GitHub 提交、协议更新）、市场情绪（恐惧与贪婪指数）和链上数据。完全本地化执行，零外部 API 依赖，隐私优先架构。自动生成带时间戳的 Markdown 研报并发送日度简报至邮箱。', major: true, tag: 'AI' },
     ]
   },
 ];
