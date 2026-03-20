@@ -697,7 +697,169 @@ GMT-4 2025/12/4
 
 As of December 4, 2025, Cardano’s market capitalization is $16.1B, while Solana—also considered a third-generation blockchain—has reached $77.6B, a gap of $61.5B. Compared to Ethereum, the gap expands to $361.1B.
 
-... (truncated in-editor; full content retained in file)
+This is not simply a function of "price × circulating supply" (market cap = price × supply), but a reflection of structural differences in technology, ecosystem, liquidity, and market narrative.
+
+**Core problem:**
+
+Cardano's "research-first" approach ensures long-term sustainability, but it also creates a lag in adoption. As a result, it struggles to capture market narratives and liquidity flows, allowing competitors driven by "high throughput + ecosystem expansion" to pull ahead in valuation.
+
+---
+
+## 2. Structure the Problem
+
+Market capitalization appears to be driven by price and supply, but the underlying forces are multi-layered:
+
+**Technology and ecosystem activity**
+
+Third-generation blockchains emphasize scalability, interoperability, and sustainability, often using PoS mechanisms. These characteristics determine whether real applications can run effectively, which in turn affects user and developer adoption.
+
+**Market supply and demand**
+
+Demand growth directly drives price, and therefore market cap. At its core, this reflects the market's expectations of the future.
+
+**Ecosystem and use cases**
+
+DeFi, NFTs, and GameFi determine whether a token is used rather than simply held. A richer ecosystem provides stronger value support.
+
+**Liquidity and risk appetite**
+
+Capital flows are shaped by market sentiment. When risk appetite rises, high-growth narratives attract more liquidity.
+
+**Supply mechanics**
+
+Deflationary design or supply control can strengthen long-term expectations, but short-term price is still primarily demand-driven.
+
+Overall, market cap is not the result of a single variable, but the outcome of interacting system-level factors.
+
+---
+
+## 3. Prioritize the Issues
+
+Ranked by impact:
+
+1. **Ecosystem expansion and TVL (High)**
+   
+   Cardano's TVL is only $195.89M (TVL/market cap ≈ 1.2%), significantly lower than Solana (~12.9%). Weak demand is the core issue.
+   
+2. **Technology and user experience (High)**
+   
+   With ~20-second block times and ~$0.17 fees, it lacks competitiveness in high-frequency use cases.
+   
+3. **Market visibility and developer conversion (Medium)**
+   
+   Development activity exists, but conversion into real applications is limited. Narrative strength is insufficient.
+   
+4. **Liquidity and cross-chain capability (Medium)**
+   
+   Lower trading volume and weaker bridging limit capital inflows.
+   
+5. **Supply structure (Low)**
+   
+   Limited short-term impact on valuation.
+
+Without addressing the first two factors, the overall trajectory is unlikely to change.
+
+---
+
+## 4. Plan the Work
+
+- **Data layer:** Track TVL and developer metrics to identify growth paths
+   
+- **Validation layer:** Test whether TVL growth translates into market cap expansion
+   
+- **Timeline:**
+   
+   - Short term: marketing and liquidity
+       
+   - Mid term: scalability upgrades (Leios)
+       
+   - Long term: governance and productization
+
+Resources would primarily come from treasury reallocation.
+
+---
+
+## 5. Analyze the Problem
+
+**Quantitative perspective:**
+
+Cardano's TVL/market cap ratio is only 1.2%, indicating that most liquidity has not entered its ecosystem. DEX volume is low, and the stablecoin base is limited, directly constraining use cases.
+
+**Qualitative perspective:**
+
+Cardano operates as an "engineering-first" system, while the market tends to reward "usability-first" systems.
+
+In other words, it has addressed the question of "Is it correct?" but not "Is it used?"
+
+---
+
+## 6. Synthesize the Findings
+
+The issue is not technology, but timing.
+
+**Strengths:**
+
+- High degree of decentralization
+   
+- Rigorous architecture
+   
+- Long-term sustainability
+
+**Weaknesses:**
+
+- Slow ecosystem activation
+   
+- Average user experience
+   
+- Lack of strong narrative
+
+By contrast:
+
+- Solana prioritizes growth first, optimization later
+   
+- Ethereum relies on network effects to maintain dominance
+
+The gap is therefore driven by **speed of adoption, not technical capability**.
+
+---
+
+## 7. Recommendation
+
+**Core judgment:**
+
+Cardano's problem is not that it is insufficient, but that it is slow.
+
+If it continues on the current path, success remains possible, but the time cost will be high.
+
+---
+
+### **A Three-Step Strategy for Cardano**
+
+**1. Increase visibility**
+
+Strengthen narrative rather than focusing solely on technical correctness.
+
+**2. Increase projects**
+
+Prioritize DeFi and stablecoins to directly expand TVL.
+
+_Stickman Charles (2026 note): Cardano mainnet has now integrated USDCx, which is a positive signal._
+
+**3. Launch a flagship product (e.g., a Cardano phone)**
+
+Embed blockchain capabilities into real-world use cases to form a closed loop.
+
+---
+
+## Conclusion
+
+Cardano may appear stagnant, but it is better understood as a system that has not fully completed its initial activation phase.
+
+Once ecosystem growth and liquidity enter a positive feedback loop, there is room for valuation re-rating.
+
+The real question has never been whether it can succeed, but—
+
+**whether the market is willing to wait.**
 `,
     content_zh: `作者说明：
 
@@ -719,7 +881,169 @@ GMT-4 2025/12/4
 
 2025年12月4日，Cardano的总市值为16.1B美元，而同为第三代区块链的Solana已达到77.6B美元，两者相差61.5B美元。与Ethereum相比，差距更是达到361.1B美元。
 
-...（编辑器中已截断；文件中保留完整内容）
+这不仅仅是"价格×供应量"的简单函数（市值=价格×供应量），而是技术、生态、流动性和市场叙述中的结构性差异的反映。
+
+**核心问题：**
+
+Cardano的"研究优先"可以保障长期的可持续性，但这也导致了采用方面的滞后。因此，它难以捕捉市场叙述和流动性流向，让"高吞吐量+生态扩展"驱动的竞争对手在估值上领先。
+
+---
+
+## 2. 问题结构化（Structure the Problem）
+
+市值似乎由价格和供应量驱动，但根本动力是多层的：
+
+**技术与生态活动**
+
+第三代区块链强调可扩展性、互操作性和可持续性，通常使用PoS机制。这些特征决定了真实应用是否能有效运行，进而影响用户和开发者采用。
+
+**市场供求**
+
+需求增长直接推动价格，进而推动市值。从根本上说，这反映了市场对未来的预期。
+
+**生态与应用场景**
+
+DeFi、NFT 和 GameFi 决定了 token 是被使用还是只被持有。更丰富的生态为价值提供更强支撑。
+
+**流动性与风险偏好**
+
+资本流向受市场情绪形塑。当风险偏好上升时，高增长叙述吸引更多流动性。
+
+**供应机制**
+
+通缩设计或供应控制可以强化长期预期，但短期价格仍由需求主导。
+
+总体而言，市值不是单一变量的结果，而是相互作用的系统级因素的结果。
+
+---
+
+## 3. 优先级排序（Prioritize the Issues）
+
+按影响力排名：
+
+1. **生态扩展与TVL（高）**
+   
+   Cardano的TVL仅为$195.89M（TVL/市值≈1.2%），远低于Solana（~12.9%）。需求疲软是核心问题。
+   
+2. **技术与用户体验（高）**
+   
+   约20秒的出块时间和~$0.17的费用，在高频用例中缺乏竞争力。
+   
+3. **市场可见性与开发者转换（中）**
+   
+   开发活动存在，但转化为实际应用有限。叙述强度不足。
+   
+4. **流动性与跨链能力（中）**
+   
+   交易量较低，跨链桥接较弱，限制了资本流入。
+   
+5. **供应结构（低）**
+   
+   对短期估值影响有限。
+
+不解决前两个因素，总体轨迹不太可能改变。
+
+---
+
+## 4. 规划工作（Plan the Work）
+
+- **数据层：** 追踪 TVL 和开发者指标以识别增长路径
+   
+- **验证层：** 测试 TVL 增长是否转化为市值扩张
+   
+- **时间表：**
+   
+   - 短期：营销和流动性
+       
+   - 中期：可扩展性升级（Leios）
+       
+   - 长期：治理和产品化
+
+资源将主要来自财政重新分配。
+
+---
+
+## 5. 分析问题（Analyze the Problem）
+
+**定量视角：**
+
+Cardano的TVL/市值比率仅为1.2%，说明大部分流动性尚未进入其生态。DEX 交易量低，稳定币基础有限，直接制约应用。
+
+**定性视角：**
+
+Cardano 作为一个"工程优先"系统运作，而市场倾向于奖励"可用性优先"系统。
+
+换句话说，它回答了"是否正确？"的问题，但没有回答"是否被使用？"的问题。
+
+---
+
+## 6. 综合发现（Synthesize the Findings）
+
+问题不在于技术，而在于时机。
+
+**优势：**
+
+- 去中心化程度高
+   
+- 架构严谨
+   
+- 长期可持续
+
+**劣势：**
+
+- 生态激活缓慢
+   
+- 用户体验一般
+   
+- 叙述缺乏有力支撑
+
+相比之下：
+
+- Solana 优先考虑增长，之后再优化
+   
+- Ethereum 依靠网络效应维持主导地位
+
+因此，差距由**采用速度而非技术能力**驱动。
+
+---
+
+## 7. 建议（Recommendation）
+
+**核心判断：**
+
+Cardano 的问题不在于不足，而在于速度慢。
+
+如果继续按照现有路径进行，成功仍然可能，但时间成本会很高。
+
+---
+
+### **Cardano 的三步战略**
+
+**1. 增加可见性**
+
+加强叙述，而不仅仅关注技术正确性。
+
+**2. 增加项目**
+
+优先考虑 DeFi 和稳定币以直接扩展 TVL。
+
+_Stickman Charles (2026 年注：Cardano 主网现已集成 USDCx，这是一个积极信号。_
+
+**3. 推出旗舰产品（例如，Cardano 手机）**
+
+将区块链能力嵌入真实用例以形成闭环。
+
+---
+
+## 结论
+
+Cardano 似乎陷入停滞，但应该更好地理解为尚未完全完成初期激活阶段的系统。
+
+一旦生态增长和流动性进入正反馈循环，估值就有重新评级的空间。
+
+真正的问题从未是它是否能成功，而是——
+
+**市场是否愿意等待。**
 `,
   }
 );
