@@ -227,25 +227,125 @@ const PROJECTS = [
   },
   {
     num: '02',
-    name: 'StoryForge DAO',     name_zh: 'StoryForge DAO',
-    status: 'BETA',             status_zh: '测试版',
-    summary: 'A decentralized autonomous organization platform for collaborative storytelling and co-authorship.',
-    summary_zh: '面向协作创作与联合著作的去中心化自治组织平台。',
-    tags: ['Blockchain', 'DAO', 'Web3'],
-    url: '#',
-    detail: `# StoryForge DAO\n\n**Status:** BETA\n**Stack:** Blockchain · DAO · Web3\n\n## Overview\nStoryForge DAO is a decentralized autonomous organization built for collaborative storytelling. Writers, editors, and readers co-govern the platform through token-based voting, deciding which stories get published, funded, and distributed.\n\n## Vision\nThe traditional publishing model is centralized and gatekept. StoryForge DAO flips this model by giving creative power back to the community — any contributor can propose, vote on, and earn from the ecosystem.\n\n## Features\n- Decentralized governance via smart contracts\n- Collaborative co-authorship framework\n- Token-based voting and revenue sharing\n- On-chain publishing records\n\n## Status\nCurrently in BETA phase, refining governance mechanics and smart contract architecture.`,
-    detail_zh: `# StoryForge DAO\n\n**状态：** 测试版\n**技术栈：** 区块链 · DAO · Web3\n\n## 概览\nStoryForge DAO 是一个面向协作创作的去中心化自治组织。作者、编辑与读者通过代币投票共同治理平台，决定哪些故事得以发布、获得资助并广泛传播。\n\n## 愿景\n传统出版模式高度中心化且存在门槛。StoryForge DAO 将创作权归还给社区——任何贡献者都可以发起提案、参与投票并从生态中获益。\n\n## 功能\n- 基于智能合约的去中心化治理\n- 协作共著框架\n- 代币投票与收益分配机制\n- 链上出版记录\n\n## 当前状态\n目前处于 BETA 阶段，正在完善治理机制与智能合约架构。`,
+    name: 'Stonepark Chromebook Borrowing System',     name_zh: 'Stonepark Chromebook 借用系统',
+    status: 'ACTIVE',             status_zh: '运行中',
+    summary: 'A full-stack web application for managing the borrowing and reservation of Chromebooks at Stonepark Intermediate School, including charging cabinets and individual devices.',
+    summary_zh: '用于管理 Stonepark 中学 Chromebook 借用和预约的全栈网页应用程序，包括充电柜和个人设备。',
+    tags: ['React', 'Node.js', 'SQLite'],
+    url: 'https://github.com/Charlie0113-T/Stonepark-Chrombooks-Borrowing-System',
+    detail: `# 🎓 Stonepark Chromebook Borrowing System\n\nA full-stack web application for Stonepark Intermediate School to manage the borrowing and reservation of Chromebooks, including charging cabinets and individual devices.\n\n## ✨ Features\n\n| Feature | Description |\n|---------|-------------|\n| 📋 **Resource Dashboard** | Grid view of all Chromebook resources with live status |\n| 🟢🟡🔴 **Status Colours** | Green = Available, Yellow = Partial, Red = Full |\n| 📅 **Bookings** | Time-slot reservations with borrower/class record |\n| 📑 **All Bookings Tab** | Tab showing all bookings across all resources |\n| 🚫 **Conflict Detection** | Automatic time-overlap checks; prevents double-booking |\n| ⏰ **Overdue Detection** | Automatic detection of overdue bookings |\n| 🔍 **Search & Filters** | Search resources/bookings by name, room, class; filter by type/status |\n| ➕ **Add Resource** | Add new resources directly from the dashboard UI |\n| 📊 **Statistics** | Utilisation charts, pie chart, per-resource table, overdue count |\n| ↩️ **Return / Cancel** | Mark active bookings as returned or cancelled |\n| 📱 **Responsive** | Works on Chromebook, tablet, and desktop |\n| 💾 **SQLite Persistence** | All data persists across restarts |\n| 🔐 **Authentication** | JWT + Google OAuth 2.0 sign-in |\n| 📧 **Email Notifications** | Booking-created and returned email alerts |\n| 💬 **Google Chat Webhook** | Posts booking events to Google Chat space |\n| 📲 **PWA / Offline** | Service worker caches app shell for offline use |\n| 📅 **Calendar View** | Monthly / weekly / daily calendar of all bookings |\n| 📷 **QR Code** | Every booking has a QR code for fast check-in / check-out |\n\n## 🛠 Tech Stack\n\n| Layer | Technology |\n|-------|------------|\n| **Frontend** | React 19, TypeScript, TailwindCSS 3, Recharts, Axios, react-big-calendar |\n| **Backend** | Node.js, Express 5 |\n| **Database** | SQLite via \`better-sqlite3\` |\n| **Auth** | JWT + Google OAuth 2.0 |\n| **Notifications** | Nodemailer (SMTP) + Google Chat webhook |\n| **PWA** | Custom service worker with cache-first + network-first strategy |`,
+    detail_zh: `# 🎓 Stonepark Chromebook 借用系统\n\nStonepark 中学的全栈网页应用程序，用于管理 Chromebook 借用和预约，包括充电柜和个人设备。\n\n## ✨ 核心功能\n\n| 功能 | 描述 |\n|------|------|\n| 📋 **资源仪表板** | 所有 Chromebook 资源的网格视图，显示实时状态 |\n| 🟢🟡🔴 **状态指示** | 绿色 = 可用、黄色 = 部分、红色 = 满 |\n| 📅 **预约** | 带借用人/班级记录的时间段预约 |\n| 📑 **所有预约选项卡** | 显示所有资源的所有预约 |\n| 🚫 **冲突检测** | 自动时间重叠检查；防止重复预约 |\n| ⏰ **逾期检测** | 自动检测逾期预约 |\n| 🔍 **搜索和过滤** | 按名称、房间、班级搜索；按类型/状态过滤 |\n| ➕ **添加资源** | 直接从仪表板 UI 添加新资源 |\n| 📊 **统计** | 利用率图表、饼图、每个资源表、逾期计数 |\n| ↩️ **归还/取消** | 将活跃预约标记为已归还或已取消 |\n| 📱 **响应式设计** | 适用于 Chromebook、平板和台式机 |\n| 💾 **SQLite 持久化** | 所有数据跨重启持久存储 |\n| 🔐 **身份验证** | JWT + Google OAuth 2.0 登录 |\n| 📧 **邮件通知** | 预约创建和归还警报 |\n| 💬 **Google Chat 网络钩子** | 将预约事件发送到 Google Chat 空间 |\n| 📲 **PWA / 离线** | 服务工作线程缓存应用程序壳以供离线使用 |\n| 📅 **日历视图** | 所有预约的月/周/日日历 |\n| 📷 **二维码** | 每个预约都有用于快速签到/签出的二维码 |\n\n## 🛠 技术栈\n\n| 层 | 技术 |\n|----|------|\n| **前端** | React 19、TypeScript、TailwindCSS 3、Recharts、Axios、react-big-calendar |\n| **后端** | Node.js、Express 5 |\n| **数据库** | 通过 \`better-sqlite3\` 的 SQLite |\n| **身份验证** | JWT + Google OAuth 2.0 |\n| **通知** | Nodemailer (SMTP) + Google Chat 网络钩子 |\n| **PWA** | 自定义服务工作线程，缓存优先和网络优先策略 |`,
   },
   {
     num: '03',
-    name: 'EchoForge DAO',      name_zh: 'EchoForge DAO',
+    name: 'EchoForge',      name_zh: 'EchoForge',
     status: 'MVP',              status_zh: 'MVP',
-    summary: 'An AI-powered content echo system built as a DAO. Enables structured knowledge amplification across nodes.',
-    summary_zh: '以 DAO 形式构建的 AI 内容回响系统，实现跨节点的结构化知识放大。',
-    tags: ['AI', 'DAO', 'Python', 'Streamlit'],
+    summary: 'A decentralized on-chain content platform built on Cardano. Publish freely, receive AI+DAO review, mint NFT proof, and earn revenue share automatically via smart contracts.',
+    summary_zh: '建立在 Cardano 上的去中心化链上内容平台。自由发布内容，获得 AI+DAO 审核，铸造 NFT 证明，通过智能合约自动分享收益。',
+    tags: ['Aiken', 'OpShin', 'Blockchain'],
     url: 'https://discord.gg/8tjzmjQmpW',
-    detail: `# EchoForge DAO\n\n**Status:** MVP\n**Stack:** AI · DAO · Python · Streamlit\n\n## Overview\nEchoForge DAO is an AI-powered content echo system structured as a DAO. It enables creators to amplify their knowledge and content across distributed nodes through AI-assisted generation, curation, and redistribution.\n\n## How It Works\n1. **Input** — A creator submits a piece of content or idea\n2. **Amplify** — AI processes and expands the idea into structured formats (articles, threads, summaries)\n3. **Echo** — The DAO distributes the amplified content across nodes and channels\n4. **Govern** — Token holders vote on content quality, distribution priorities, and system upgrades\n\n## Join the Community\nThe EchoForge DAO community lives on Discord — join us to participate, contribute, and shape the future of decentralized content creation.\n\n[→ Join EchoForge DAO on Discord](https://discord.gg/8tjzmjQmpW)`,
-    detail_zh: `# EchoForge DAO\n\n**状态：** MVP\n**技术栈：** AI · DAO · Python · Streamlit\n\n## 概览\nEchoForge DAO 是以 DAO 形式构建的 AI 内容回响系统。它帮助创作者通过 AI 辅助生成、策划与再分发，将知识和内容跨节点放大传播。\n\n## 运作方式\n1. **输入** — 创作者提交内容或想法\n2. **放大** — AI 将想法扩展为结构化格式（文章、推文、摘要）\n3. **回响** — DAO 将放大后的内容分发至各节点与渠道\n4. **治理** — 代币持有者对内容质量、分发优先级和系统升级进行投票\n\n## 加入社区\nEchoForge DAO 的社区在 Discord——欢迎加入，参与共建去中心化内容创作的未来。\n\n[→ 加入 EchoForge DAO Discord](https://discord.gg/8tjzmjQmpW)`,
+    detail: `# EchoForge
+
+**Status:** MVP
+**Stack:** Aiken + OpShin · Cardano Blockchain · React + TypeScript
+
+## Overview
+EchoForge is a decentralized content platform built on the Cardano blockchain. Anyone can publish content freely; after passing dual AI+DAO review, the content receives an on-chain certificate (CIP-68 NFT) and revenue is split automatically via smart contract.
+
+> **Cardano On-Chain Content Platform** — Publish Freely · AI+DAO Review · On-Chain Proof · Revenue Share
+
+### Platform Flow
+
+\`\`\`
+Publish (anyone may post)
+  ↓
+AI + DAO Review (quality gate)
+  ↓
+On-Chain Proof (approved → mint CIP-68 NFT, permanently recorded on-chain)
+  ↓
+Revenue Split (smart contract auto-executes revenue distribution)
+\`\`\`
+
+### Smart Contracts
+
+| Contract | Purpose |
+|----------|---------|
+| **echoforge.py** | Core revenue split (70/30 tip, 65/25/10 referral), CIP-68 NFT minting, Echo Creator certification |
+| **co_creation.py** | Multi-author co-creation: configurable split ratios, contributor management |
+| **settlement_engine.py** | Sybil defence (stake-weighted voting), anti-arbitrage cap, DAO governance hooks |
+| **content_moderation_engine.py** | Three governance modes: **AI_ONLY**, **AI_PLUS_JURY**, **FULLY_DAO** |
+
+### Key Features
+- ✅ CIP-30 wallet support (Eternl / Lace / Nami / Yoroi)
+- ✅ Echo Creator certification & on-chain proof (CIP-68 NFT)
+- ✅ AI moderation backend (Ollama \`gemma:2b\`)
+- ✅ Three content governance modes: **AI_ONLY**, **AI_PLUS_JURY**, **FULLY_DAO**
+- ✅ Smart contract auto revenue split (referral 65/25/10, normal tip 70/30)
+- ✅ Hydra L2 high-concurrency DAO voting
+- ✅ Multi-language UI (en / zh-CN / zh-TW / fr / es / ja)
+
+### Tech Stack
+- **Frontend:** React 18 + TypeScript + Vite + Tailwind CSS + MeshJS
+- **Backend:** Node.js + Express + Ollama
+- **Contracts:** OpShin (Python-like Plutus) + Aiken
+- **Storage:** IPFS (Pinata) + Blockfrost API
+- **Widgets:** CIP-68 NFT standard, Hydra Head Protocol for L2 scaling
+
+### Join the Community
+The EchoForge community lives on Discord — join us to participate, contribute, and shape the future of decentralized content creation.
+
+[→ Join EchoForge on Discord](https://discord.gg/8tjzmjQmpW)`,
+    detail_zh: `# EchoForge
+
+**状态：** MVP
+**技术栈：** Aiken + OpShin · Cardano 区块链 · React + TypeScript
+
+## 概览
+EchoForge 是建立在 Cardano 区块链上的去中心化内容平台。任何人都可以自由发布内容；通过 AI+DAO 双重审核后，内容获得链上证书（CIP-68 NFT），收益通过智能合约自动分配。
+
+> **Cardano 链上内容平台** — 自由发布 · AI+DAO 审核 · 链上证明 · 收益分享
+
+### 平台流程
+
+\`\`\`
+发布内容（任何人可发表）
+  ↓
+AI + DAO 审核（质量关卡）
+  ↓
+链上证明（通过审核 → 铸造 CIP-68 NFT，永久链上记录）
+  ↓
+收益分配（智能合约自动执行收益分配）
+\`\`\`
+
+### 智能合约
+
+| 合约 | 用途 |
+|------|------|
+| **echoforge.py** | 核心收益分配（打赏 70/30，推荐 65/25/10），CIP-68 NFT 铸造，Echo 创作者认证 |
+| **co_creation.py** | 多作者共创：可配置分配比例、贡献者管理 |
+| **settlement_engine.py** | Sybil 防御（权重投票），反套利上限，DAO 治理钩子 |
+| **content_moderation_engine.py** | 三种治理模式：**AI_ONLY**、**AI_PLUS_JURY**、**FULLY_DAO** |
+
+### 核心功能
+- ✅ CIP-30 钱包支持（Eternl / Lace / Nami / Yoroi）
+- ✅ Echo 创作者认证与链上证明（CIP-68 NFT）
+- ✅ AI 审核后端（Ollama \`gemma:2b\`）
+- ✅ 三种内容治理模式：**AI_ONLY**、**AI_PLUS_JURY**、**FULLY_DAO**
+- ✅ 智能合约自动收益分配（推荐 65/25/10，打赏 70/30）
+- ✅ Hydra L2 高并发 DAO 投票
+- ✅ 多语言 UI（中英法西日）
+
+### 技术栈
+- **前端：** React 18 + TypeScript + Vite + Tailwind CSS + MeshJS
+- **后端：** Node.js + Express + Ollama
+- **合约：** OpShin (类 Python Plutus) + Aiken
+- **存储：** IPFS (Pinata) + Blockfrost API
+- **生态：** CIP-68 NFT 标准、Hydra Head Protocol L2 扩展
+
+### 加入社区
+EchoForge 社区在 Discord 上——欢迎加入，参与共建去中心化内容创作的未来。
+
+[→ 加入 EchoForge Discord](https://discord.gg/8tjzmjQmpW)`,
   },
   {
     num: '04',
@@ -1070,13 +1170,14 @@ const MILESTONES = [
     year: '2025',
     items: [
       { date: '2025-03-03', title: 'First Blockchain Experience & Investment', title_zh: '首次区块链体验与投资', desc: 'Dove into blockchain technology and made my first investment, opening a new chapter in tech and finance.', desc_zh: '深入区块链技术并完成首次投资，开启科技与金融融合的新篇章。', major: true, tag: 'BLOCKCHAIN' },
+      { date: '2025-05-14', title: 'Codemao Exploring the Moon Cup AI Programming Championship First Prize', title_zh: 'Codemao 探月杯AI创编大赛 一等奖', desc: 'Won first prize in the Codemao Exploring the Moon Cup AI Programming Championship.', desc_zh: '荣获 Codemao 探月杯AI创编大赛一等奖。', major: true, tag: 'Code' },
       { date: '2025-06-15', title: 'Admitted to Codemao Python Talent Class with Full Score', title_zh: '满分入选编程猫科技特长生Python班', desc: 'Selected for Codemao Python Talent Class with a perfect score.', desc_zh: '以满分成绩入选编程猫科技特长生Python班。', major: true, tag: 'Code' },
       { date: '2025-07-05', title: 'National Youth Labor Skills & Intelligent Design Competition Python Silver Medal', title_zh: '全国青少年劳动技能与智能设计大赛Python中学组银牌', desc: 'Won the Silver Medal in the National Youth Labor Skills & Intelligent Design Competition (Python, Middle School Group).', desc_zh: '获得全国青少年劳动技能与智能设计大赛Python中学组银牌。', major: true, tag: 'Code' },
+      { date: '2025-08-12', title: 'Eero Router Heat Disconnect Experiment', title_zh: 'Eero散热工程', desc: 'Completed and published the Eero Router Heat Disconnect Experiment on Instructables, exploring thermal management solutions for networking hardware.', desc_zh: '在 Instructables 上发布 Eero 散热工程项目，探索网络硬件的散热管理解决方案。', major: false, tag: 'HARDWARE' },
       { date: '2025-08-06', title: 'Completed Integrated Math I Honors', title_zh: '完成Integrated Math I荣誉课程', desc: 'Completed the Integrated Math I Honors course.', desc_zh: '完成Integrated Math I荣誉课程。', major: true, tag: 'MATH' },
       { date: '2025-08-10', title: 'Published First Collaborative AI Research on Zenodo', title_zh: '在Zenodo上传首个多人合作AI研究项目', desc: 'Published the collaborative AI research: Tao Chengfeng, C. T., Cheng Jiale, J. C., & Tong Yiyan, S. T. (2025). 6 AI Mathematics Ability Assessments. Zenodo. https://doi.org/10.5281/zenodo.17317013', desc_zh: '陶乘风, C. T., 程嘉乐, J. C., & 童一焱, S. T. (2025). 6 AI Mathematics Ability Assessments. Zenodo. https://doi.org/10.5281/zenodo.17317013', major: true, tag: 'AI' },
       { date: '2025-09-28', title: 'Graduated from Codemao Advanced Python', title_zh: '完成编程猫Python高阶，顺利毕业', desc: 'Graduated from Codemao Advanced Python course.', desc_zh: '完成编程猫Python高阶课程，顺利毕业。', major: true, tag: 'Code' },
       { date: '2025-06-06', title: 'Invested in TSLA', title_zh: '投资特斯拉', desc: 'Added Tesla to my investment portfolio, betting on innovation and the future of mobility.', desc_zh: '将特斯拉纳入投资组合，押注创新与出行的未来。', major: false, tag: 'INVEST' },
-      { date: '2025-08-01', title: 'Discovered VS Code', title_zh: '发现 VS Code', desc: 'Started using Visual Studio Code, which greatly improved my coding efficiency and workflow.', desc_zh: '开始使用 Visual Studio Code，大幅提升了编码效率与工作流程。', major: false, tag: 'Code' },
       { date: '2025-09-14', title: 'Cardano Academy Master Level', title_zh: 'Cardano 学院大师级', desc: 'Achieved Master Level at Cardano Academy, deepening my understanding of blockchain and smart contracts.', desc_zh: '在 Cardano 学院取得大师级认证，深化了对区块链与智能合约的理解。', major: true, tag: 'Blockchain' },
       { date: '2025-12-21', title: 'Launched My First C++ Website', title_zh: '发布首个 C++ 网站', desc: 'Deployed my first website built with C++, marking a milestone in my systems programming journey.', desc_zh: '部署了第一个用 C++ 构建的网站，标志着系统编程旅程的重要里程碑。', major: true, tag: 'Code' },
       { date: '2025-12-21', title: 'Completed StoryForge DAO MVP', title_zh: '完成 StoryForge DAO MVP', desc: 'Finished and launched the MVP for my blockchain startup project, StoryForge DAO.', desc_zh: '完成并发布区块链创业项目 StoryForge DAO 的最小可行产品。', major: true, tag: 'Startup' },
@@ -1090,7 +1191,7 @@ const MILESTONES = [
       { date: '2026-03-04', title: 'EchoForgeDAO MVP Complete', title_zh: 'EchoForgeDAO MVP 完成', desc: 'Completed the MVP for my blockchain project EchoForgeDAO, advancing decentralized content creation.', desc_zh: '完成区块链项目 EchoForgeDAO 的 MVP，推动去中心化内容创作向前迈进。', major: true, tag: 'Startup' },
       { date: '2026-03-06', title: 'Read 5,234,000 Words of Literature', title_zh: '累计阅读 523 万字文学作品', desc: 'Achieved a personal record by reading over 5.23 million words, demonstrating dedication to literary exploration.', desc_zh: '创下个人记录，累计阅读超过 523 万字，展现对文学探索的坚定投入。', major: true, tag: 'Think' },
       { date: '2026-03-07', title: 'First Stickman Charles Essay Published', title_zh: 'Stickman Charles首篇文章出炉', desc: 'Published my first essay as Stickman Charles, marking a new chapter in writing.', desc_zh: '以Stickman Charles身份发表首篇文章，开启写作新篇章。', major: true, tag: 'Think' },
-        { date: '2026-03-13', title: 'First Principles Essay Published', title_zh: '第一性原理文章发表', desc: 'Published my second major essay on First Principles thinking, exploring independent reasoning and challenging conventions.', desc_zh: '发表第二篇重要文章《第一性原理》，深入探讨独立思考和挑战常规的思维方式。', major: true, tag: 'Think' },
+        { date: '2026-03-15', title: 'EchoForge Live on Cardano Preprod Testnet', title_zh: 'EchoForge 上线Cardano Preprod Testnet', desc: 'Launched EchoForge on Cardano\'s Preprod testnet, marking a major milestone in blockchain-based content platform development.', desc_zh: 'EchoForge 正式上线 Cardano Preprod Testnet，标志着区块链内容平台开发的重要里程碑。', major: true, tag: 'Blockchain' },
       { date: '2026-03-18', title: 'Cardano Daily News Agent Launched', title_zh: 'Cardano 每日新闻 Agent 上线', desc: 'Launched Cardano Intel Agent, an AI-powered blockchain intelligence system orchestrated by CrewAI and powered by Llama 3. Monitors Cardano (ADA) technical developments (GitHub commits, protocol updates), market sentiment (Fear & Greed Index), and on-chain dynamics in real-time. Fully local execution on Mac Mini, zero external API dependencies, privacy-first architecture. Auto-generates timestamped Markdown research reports and sends daily briefings to email.', desc_zh: '发布 Cardano Intel Agent，一套由 CrewAI 编排、Llama 3 驱动的 AI 区块链情报系统。实时监控 Cardano (ADA) 的技术动态（GitHub 提交、协议更新）、市场情绪（恐惧与贪婪指数）和链上数据。完全本地化执行，零外部 API 依赖，隐私优先架构。自动生成带时间戳的 Markdown 研报并发送日度简报至邮箱。', major: true, tag: 'AI' },
     ]
   },
