@@ -14,12 +14,65 @@ let LANG = localStorage.getItem("lang") || "en";
 /** Return the right-language string */
 const t = (en, zh) => (LANG === "zh" ? zh : en);
 
+function updateLangToggle() {
+  const langBtn = document.getElementById("lang-toggle");
+  if (!langBtn) return;
+  langBtn.textContent = LANG === "zh" ? "English" : "中文";
+}
+
 /** Apply language to all [data-en] / [data-zh] elements */
 function applyLang() {
   document.querySelectorAll("[data-en]").forEach((el) => {
     el.textContent = LANG === "zh" ? el.dataset.zh : el.dataset.en;
   });
+  document.documentElement.lang = LANG === "zh" ? "zh" : "en";
+  updateLangToggle();
 }
+
+/* ═══════════════════════════════════════════════
+   Theme system — dark / light / auto
+   ═══════════════════════════════════════════════ */
+const THEME_KEY = "theme";
+const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+let THEME = localStorage.getItem(THEME_KEY) || "dark";
+
+function resolveTheme(mode) {
+  if (mode === "auto") return prefersLight.matches ? "light" : "dark";
+  return mode;
+}
+
+function setThemeIcon(mode) {
+  const icon = document.getElementById("theme-icon");
+  if (!icon) return;
+  icon.classList.remove("fa-moon", "fa-sun", "fa-circle-half-stroke");
+  if (mode === "light") {
+    icon.classList.add("fa-sun");
+  } else if (mode === "auto") {
+    icon.classList.add("fa-circle-half-stroke");
+  } else {
+    icon.classList.add("fa-moon");
+  }
+}
+
+function applyTheme(mode = THEME) {
+  const resolved = resolveTheme(mode);
+  if (resolved === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+  }
+  setThemeIcon(mode);
+}
+
+function cycleTheme() {
+  THEME = THEME === "dark" ? "light" : THEME === "light" ? "auto" : "dark";
+  localStorage.setItem(THEME_KEY, THEME);
+  applyTheme();
+}
+
+prefersLight.addEventListener("change", () => {
+  if (THEME === "auto") applyTheme();
+});
 
 // ── Nav: add border on scroll ──
 const nav = document.querySelector(".nav");
@@ -59,7 +112,8 @@ if (statusText) {
     const hh = String(now.getHours()).padStart(2, "0");
     const mm = String(now.getMinutes()).padStart(2, "0");
     const ss = String(now.getSeconds()).padStart(2, "0");
-    statusText.textContent = `System online — ${hh}:${mm}:${ss}`;
+    const prefix = t("System online —", "系统在线 —");
+    statusText.textContent = `${prefix} ${hh}:${mm}:${ss}`;
   };
   updateTime();
   setInterval(updateTime, 1000);
@@ -1538,6 +1592,9 @@ function initPanel() {
   if (themeBtn) {
     themeBtn.addEventListener("click", cycleTheme);
   }
+
+  // Apply saved theme on load
+  applyTheme();
 
   // Apply saved language on load
   applyLang();
